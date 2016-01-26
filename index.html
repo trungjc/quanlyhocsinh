@@ -343,7 +343,7 @@
             <!-- search form -->
               <form action="#" method="get" class="search-form">
                <div class="input-group">
-                    <input placeholder="Type Search..." class="form-control">
+                    <input placeholder="Tìm kiếm học sinh / lớp học..." class="form-control">
                     <div class="input-group-btn">
                       <button class="btn btn-primary "><i class="fa fa-search"></i></button>
                     </div>
@@ -366,8 +366,8 @@
               <section class="box  box-solid ">
                 <div class="box-body">
                   <ul class="nav nav-tabs ">
-                  <li class=""><a data-toggle="tab" href="#table-list-1" aria-expanded="false">Nhật ký lớp học</a></li>
-                  <li class="active"><a data-toggle="tab" href="#table-list-2" aria-expanded="true">Thông tin nội bộ</a></li>
+                  <li class="active"><a data-toggle="tab" href="#table-list-1" aria-expanded="false">Nhật ký lớp học</a></li>
+                  <li class=""><a data-toggle="tab" href="#table-list-2" aria-expanded="true">Thông tin nội bộ</a></li>
                 </div>
                 <div class="tab-content no-padding">
                   <div id="table-list-1" class="tab-pane active">
@@ -473,7 +473,7 @@
                     <!-- Date and time range -->
                     <div class="col-md-5">
                       <div class="form-group">
-                          <button class="btn btn-primary pull-right "><i class="fa fa-plus"></i> Add New</button>
+                          <button class="btn btn-primary pull-right "><i class="fa fa-plus"></i> Thêm mới</button>
                           <div class="input-group pull-right" style="margin-right:10px;width: 160px">                        
                           <input type="text" class="daterange form-control pull-left" id="reservation">
                           <div class="input-group-addon">
@@ -495,6 +495,7 @@
                         <th>TG bắt đầu</th>
                         <th>TG kết thúc</th>
                         <th>Trạng thái</th>
+						<th></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -504,6 +505,7 @@
                         <td>01/01/2016</td>
                         <td>01/02/2016</td>
                         <td>70%</td>
+						<td><i class="fa fa-edit"></i></td>
                       </tr>
                       <tr>
                         <td>2</td>
@@ -511,6 +513,7 @@
                         <td>27/01/2016</td>
                         <td>27/01/2016</td>
                         <td>0%</td>
+						<td><i class="fa fa-edit"></i></td>
                       </tr>
                       <tr>
                         <td>3</td>
@@ -518,6 +521,7 @@
                         <td>25/01/2016</td>
                         <td>28/01/2016</td>
                         <td>0%</td>
+						<td><i class="fa fa-edit"></i></td>
                       </tr>
                       <tr>
                         <td>4</td>
@@ -525,6 +529,7 @@
                         <td>27/01/2016</td>
                         <td>27/01/2016</td>
                         <td>50%</td>
+						<td><i class="fa fa-edit"></i></td>
                       </tr>
                       <tr>
                         <td>5</td>
@@ -532,6 +537,7 @@
                         <td>27/01/2016</td>
                         <td>28/01/2016</td>
                         <td>0%</td>
+						<td><i class="fa fa-edit"></i></td>
                       </tr>
                     </tbody>
                     <tfoot>
@@ -591,7 +597,7 @@
                     <p class="message">
                       <a href="#" class="name">
                         <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
-                        Mike Doe
+                        Hà Hằng
                       </a>
                       I would like to meet you to discuss the latest news about
                       the arrival of the new theme. They say it is going to be one the
@@ -703,8 +709,8 @@
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                       <input type="checkbox" value="" name="">
-                      <span class="text">Let theme shine like a star</span>
-                      <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
+                      <span class="text">In tài liệu cho Mr Linh</span>
+                      <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 days</small>
                       <div class="tools">
                         <i class="fa fa-edit"></i>
                         <i class="fa fa-trash-o"></i>
@@ -716,26 +722,13 @@
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                       <input type="checkbox" value="" name="">
-                      <span class="text">Check your messages and notifications</span>
-                      <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
+                      <span class="text">Apply học bổng cho Vũ Anh</span>
+                      <small class="label label-primary"><i class="fa fa-clock-o"></i> 2 week</small>
                       <div class="tools">
                         <i class="fa fa-edit"></i>
                         <i class="fa fa-trash-o"></i>
                       </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name="">
-                      <span class="text">Let theme shine like a star</span>
-                      <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
+                    </li>                    
                   </ul>
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix no-border">
@@ -748,7 +741,7 @@
                       <li><a href="#">&raquo;</a></li>
                     </ul>
                   </div>
-                  <button class="btn btn-primary  pull-right"><i class="fa fa-plus"></i> Add item</button>
+                  <button class="btn btn-primary  pull-right"><i class="fa fa-plus"></i> Thêm mới</button>
                 </div>
               </div><!-- /.box -->
 

@@ -1,0 +1,932 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"ba",
+				"background-image"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"background-",
+				"background-image"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"ver",
+				"vertical-align"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"re",
+				"relative"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"paddi",
+				"padding"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"the_c",
+				"the_content"
+			],
+			[
+				"border-bo",
+				"border-bottom"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"the_t",
+				"the_title"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"par",
+				"parent"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"bot",
+				"bottom"
+			],
+			[
+				"po",
+				"pos	position: ${1:relative};"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"ou",
+				"outline"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"hei",
+				"height"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"list-s",
+				"list-style"
+			],
+			[
+				"backgr",
+				"background"
+			],
+			[
+				"fo",
+				"font-weight"
+			],
+			[
+				"ex",
+				"exit"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"r",
+				"relative"
+			],
+			[
+				"p",
+				"position"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"a",
+				"arrow"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"bo",
+				"border-radius"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"boder",
+				"border-radius"
+			],
+			[
+				"h",
+				"href	Attr"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"cate",
+				"categories_info"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"mi",
+				"min-width"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/xampp/htdocs/angular-phonecat/bower.json",
+			"settings":
+			{
+				"buffer_size": 366,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/library-less=css/andy/andy.scss",
+			"settings":
+			{
+				"buffer_size": 20849,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/fiat-b/html/css/style.css",
+			"settings":
+			{
+				"buffer_size": 50014,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nPackage Control:\n---------------\n\n  Version 3.1 Release Notes\n  \n  Package Control continues its focus on polish and fixing edge-case bugs. Some\n  of the changes in this version include:\n  \n   - quick panel for Install Package now stays open on Windows with recent\n     versions of ST3, even when focus is lost\n   - new \"downloader_precedence\" setting to allow users to use specific HTTP\n     backend due to network proxy or SSL issues\n   - added Install Local Dependency command for package developers to more\n     easily deal with dependencies during development\n   - improved handling of git/hg package upgrade errors\n   - better handling of locked .sublime-package files on Windows\n   - performance improvements for users with a large number of open windows\n  \n  For package developers, the list of available dependencies has been growing:\n  https://github.com/wbond/package_control_channel/blob/master/repository/dependencies.json\n  \n  Enjoy!\n  \n\n  Version 3.0 Release Notes\n  \n  \n  **** Windows Sublime Text 3 Users ****\n  \n  Due to a bug in Package Control 2.0, Windows ST3 users will need to open the\n  Sublime Text console (ctrl+`) and execute the following Python to properly\n  upgrade. All other users may ignore this part of the message.\n  \n  Make sure NOT to copy the leading two spaces, or an \"unexpected indent\" error\n  will occur.\n  \n  import urllib.request,os,sys; exec(\"if sys.version_info < (3,) or os.name != 'nt': raise OSError('This code is for Windows ST3 only!')\"); pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')\n  \n  ********\n  \n  \n  Package Control 3.0 adds a bunch of polish, improving the Sublime Text\n  experience for users and package developers:\n  \n   - improved upgrades of themes, color schemes and syntaxes\n   - dependency support\n   - SSL for Linux\n   - new secondary Windows HTTP backend\n   - patches for Python in Sublime Text 2 on Windows\n   - commands to easily remove channels and repositories\n   - an events API for packages\n   - improved documentation\n  \n  \n  As of July 2014, I now work for myself. This has allowed me to spend more time\n  working on open source software, including Package Control. If you appreciate\n  the work I've done, please consider a small donation. If even 5% of regular\n  users donated the price of a coffee or beer, that would cover quite a bit of\n  my development time! See https://packagecontrol.io/about for options.\n  \n  \n  Some recent Package Control stats:\n  \n   - every weekday over 1M JSON requests hit the channel server\n   - in December, the channel server will transmit 4TB+ of compressed JSON\n   - users have installed, upgraded or removed 85M+ packages since late 2011\n  \n  \n  Read more about the release at:\n  \n  https://packagecontrol.io/news#2014-12-23-Package_Control_30_Released\n  \n",
+			"settings":
+			{
+				"buffer_size": 3361,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "sas",
+		"selected_items":
+		[
+			[
+				"sas",
+				"Set Syntax: Sass"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"Emmet",
+				"Set Syntax: Emmet"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"SASS",
+				"Set Syntax: Sass"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: sa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 51.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/build",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/build/bootstrap-less",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/build/less",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/build/less/skins",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/dist",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/dist/css",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/dist/js",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/dist/js/pages",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/examples",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/forms",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/tables"
+	],
+	"file_history":
+	[
+		"/D/xampp/htdocs/angular-phonecat/app/bower_components/angular/angular-csp.css",
+		"/D/xampp/htdocs/angular-phonecat/app/bower_components/angular/package.json",
+		"/D/dowload/andy-master/andy.scss",
+		"/D/xampp/htdocs/library-less=css/andy/andy.scss",
+		"/D/xampp/htdocs/angular-phonecat/package.json",
+		"/D/xampp/htdocs/library-less/shape/less/variables.less",
+		"/D/xampp/htdocs/library-less/shape/less/shape.less",
+		"/D/xampp/htdocs/library-less/shape/less/dist.less",
+		"/D/xampp/htdocs/angular-phonecat/.bowerrc",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/index.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/build/less/skins/skin-blue.less",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/build/less/AdminLTE.less",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/forms/advanced.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/dist/js/pages/dashboard.js",
+		"/D/xampp/htdocs/angular-phonecat/app/index.html",
+		"/D/xampp/htdocs/angular-phonecat/app/js/app.js",
+		"/D/xampp/htdocs/angular-phonecat/app/js/controllers.js",
+		"/D/xampp/htdocs/angular-phonecat/app/js/filters.js",
+		"/D/xampp/htdocs/angular-phonecat/app/js/directives.js",
+		"/D/xampp/htdocs/angular-phonecat/app/js/services.js",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/examples/login.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/examples/register.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/dist/css/AdminLTE.css",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/dist/css/AdminLTE.min.css",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/UI/general.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/index2.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/calendar.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/charts/chartjs.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/charts/flot.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/charts/inline.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/charts/morris.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/examples/404.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/examples/500.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/examples/blank.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/examples/invoice.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/examples/profile.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/forms/editors.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/forms/general.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/layout/boxed.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/layout/collapsed-sidebar.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/layout/fixed.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/layout/top-nav.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/mailbox/compose.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/mailbox/mailbox.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/mailbox/read-mail.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/tables/data.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/tables/simple.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/UI/buttons.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/UI/icons.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/UI/modals.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/UI/sliders.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/UI/timeline.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/pages/widgets.html",
+		"/D/xampp/htdocs/AdminLTE-2.3.0/quanlyhocvien/starter.html",
+		"/D/xampp/htdocs/ease/wp-content/themes/main/ahlu.css",
+		"/D/driver google/Google Drive/TThuy/New folder/taxoffice/css/main.css",
+		"/D/driver google/Google Drive/TThuy/home.html",
+		"/D/driver google/Google Drive/TThuy/New folder/cogda/home.html",
+		"/C/Users/Computer/Desktop/New folder/oc-dk-instagram/css/home.css",
+		"/C/Users/Computer/Desktop/New folder/oc-dk-instagram/home1.html",
+		"/C/Users/Computer/Downloads/dev_Ease.sql",
+		"/C/Users/Computer/Desktop/New folder/cogda/css/main.css",
+		"/D/xampp/htdocs/equipment/equipment.sql",
+		"/D/xampp/htdocs/propertease/propertease/templates/propertease/css/main.css",
+		"/C/Users/Computer/AppData/Local/Temp/Rar$DR03.559/home v3/css/demo.css",
+		"/C/Users/Computer/Desktop/New folder/cogda/home.html",
+		"/C/Users/Computer/Desktop/local.xml",
+		"/D/xampp/htdocs/ausport/skin/frontend/ausport/default/scss/core/_common.scss",
+		"/C/Users/Computer/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/D/xampp/htdocs/fiat-physica/static-html/sass/style.scss",
+		"/D/xampp/htdocs/fiat-physica/static-html/sass/regions/_footer.scss",
+		"/D/xampp/htdocs/fiat-physica/static-html/sass/regions/_content.scss",
+		"/D/xampp/htdocs/fiat-physica/static-html/sass/lib/foundation/scss/foundation/_settings.scss",
+		"/C/Users/Computer/Desktop/New folder/features/home.html",
+		"/D/xampp/htdocs/fiat-b/html/css/style.css",
+		"/C/Users/Computer/Downloads/properteasenew.sql",
+		"/D/xampp/htdocs/propertease/dev_propertease0724.sql",
+		"/D/xampp/htdocs/propertease/dev_propertease1308.sql",
+		"/D/xampp/htdocs/fiat-b/html/diy_campaign_05.html",
+		"/D/xampp/htdocs/fiat-b/html/campaigninner_01.html",
+		"/D/xampp/htdocs/hainesn/app/etc/local.xml",
+		"/C/Users/Computer/Desktop/New folder/gradysports/home.html",
+		"/C/Users/Computer/Desktop/New folder/pricing final/css/pricing.css",
+		"/C/Users/Computer/Desktop/New folder/pricing final/final.html",
+		"/C/Users/Computer/Desktop/New folder/gradysports/css/main.css",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/style.css",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/functions.php",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/js/theme_trust.js",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/category-portfolio.php",
+		"/D/xampp/htdocs/storywise/wp-admin/css/wp-admin.min.css",
+		"/D/xampp/htdocs/storywise/wp-admin/css/login-rtl.min.css",
+		"/D/xampp/htdocs/storywise/wp-admin/css/login.min.css",
+		"/D/xampp/htdocs/storywise/html/portfolio.html",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/header.php",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/index.php",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/content.php",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/footer.php",
+		"/D/duan/Duc/freelancer/fuselms/source-thuy/home2.html",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/author.php",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/page.php",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/single.php",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/category.php",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/archive.php",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/tag.php",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/page-32.php",
+		"/D/xampp/htdocs/storywise/wp-content/themes/twentythirteen/page-2.php",
+		"/D/xampp/htdocs/pistil/PISTIL Landing Pages/samples/template/custom.css",
+		"/D/xampp/htdocs/pistil/PISTIL Landing Pages/samples/template/signup.html",
+		"/D/xampp/htdocs/grady-sports-media/wp-content/themes/startup/functions.php",
+		"/D/xampp/htdocs/grady-sports-media/wp-content/themes/startup/index.php",
+		"/D/xampp/htdocs/storywise/html/package.html",
+		"/D/xampp/htdocs/storywise/html/index.html",
+		"/D/xampp/htdocs/storywise/html/contact.html",
+		"/D/xampp/htdocs/storywise/html/js/theme_trust.js",
+		"/D/xampp/htdocs/storywise/html/blog.html",
+		"/D/xampp/htdocs/storywise/html/style.css",
+		"/D/xampp/htdocs/storywise/wp-content/plugins/list-post/post-listing-shortcode.php",
+		"/D/xampp/htdocs/storywise/html/about.html",
+		"/D/xampp/htdocs/storywise/html/js/jcarousel.responsive.js",
+		"/C/Users/Computer/Downloads/fancyapps-fancyBox-v2.1.5-0-ge2248f4/fancyapps-fancyBox-18d1712/demo/index.html",
+		"/D/xampp/htdocs/storywise/html/porfolio.html",
+		"/D/xampp/htdocs/storywise/html/css/jquery.fancybox.css",
+		"/D/xampp/htdocs/storywise/html/js/jquery.fancybox.pack.js",
+		"/D/xampp/htdocs/storywise/html/host",
+		"/D/xampp/htdocs/storywise/html/images/bg-banner.png",
+		"/D/xampp/htdocs/storywise/index.html",
+		"/C/Users/Computer/Downloads/wordpress-popular-posts.3.2.2/wordpress-popular-posts/views/index.php",
+		"/D/xampp/htdocs/makeitcount/MIC-FE/client/modules/home/views/home.html"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"D:\\xampp\\htdocs\\AdminLTE-2.3.0\\quanlyhocvien",
+			"Admin Skins",
+			"http://localhost/liveout/blog/",
+			"http://localhost/liveout/blog/wp-content/plugins/contestburner",
+			"D:\\xampp\\htdocs\\makeitcount\\MIC-FE",
+			"D:\\xampp\\htdocs\\303velocity",
+			"D:\\xampp\\htdocs\\athlete",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"logo",
+			"reservation",
+			"Date range:",
+			"daterange-btn",
+			"search",
+			"daterange",
+			"logo",
+			"logo-mini",
+			".navbar",
+			".main-header > .navbar",
+			".left-side",
+			".main-sidebar, .left-side",
+			".main-header .logo",
+			"bootstrap-timepicker",
+			"daterange-btn",
+			"example1_wrapper",
+			"box box-info",
+			"nav nav-tabs pull-right",
+			"nav nav-tabs pull-right ui-sortable-handle",
+			"user2-160x160.jpg",
+			"dist/img/user2-160x160.jpg",
+			"control-sidebar",
+			"control-sidebar control-sidebar-dark control-sidebar-open",
+			"fa fa-gears",
+			"AdminLTE",
+			"AdminLTE Skins",
+			"Post Formats",
+			".menu-horizontal-opened",
+			".main_header .navigation .menu-container .menu-horizontal-opened",
+			".product-category .wrapper .title",
+			"http://dev.dusted.com.au/dev_ease_woo/",
+			"dev",
+			">\n",
+			".wrapper:hover",
+			".products li .wrapper:hover",
+			"http://dev.dusted.com.au/dev_ease/",
+			"http://run.no-ip.info:2491/wp/",
+			"http",
+			"localhost",
+			"head-search",
+			"head-search ",
+			".t3-content article aside dl dd",
+			"like",
+			"#header-search",
+			".logo",
+			"icon-",
+			"icon",
+			".skip-cart",
+			".account-cart-wrapper",
+			".top-menu",
+			"#search_mini_form",
+			".account-cart-wrapper\n",
+			".account-cart-wrapper",
+			"#header-search",
+			"Gutter",
+			".sub-footer",
+			"            \n",
+			"img/img-1.jpg",
+			"<i class=\"fa fa-chevron-circle-down\"></i>",
+			"medium-2 columns",
+			".btn-return, .btn-continue, .btn-prev, .btn-save",
+			".header .top-bar",
+			".package .graph .bottom, .package .graph .top",
+			"media",
+			".header .top-bar .top-bar-section ul li a",
+			"-risk",
+			"icon-risk",
+			".info-project-leader",
+			"ico-sprites.png",
+			"RESEARCH",
+			"fi-price-tag",
+			".large-4.large-offset-1.columns.action-button",
+			".point-process-06 span",
+			".point-process-06",
+			".site-main",
+			"padding-right: 376px;",
+			"width: 60%;",
+			" width: 60%;",
+			".wpfai-list-item a",
+			"readmore",
+			".row",
+			"mediaContainer",
+			".category .readmore",
+			"[more]",
+			".free-walls .play-c",
+			"home-section",
+			"wpb_postsbycategory",
+			"categoryposts",
+			"create_post_type_home_section",
+			".nav-menu li.last-child, .nav-menu li:last-child",
+			".post",
+			".entry-header .entry-meta",
+			"comment",
+			"input,textarea",
+			"button",
+			".package .column p",
+			".entry-title",
+			".jcarousel ul li img",
+			"body #mc_embed_signup .mc-field-group label",
+			".nav-menu li.last-child",
+			".nav-menu li.last-child, .nav-menu li:last-child",
+			".home .site-main",
+			".item-post a:after",
+			"Continue reading ",
+			"more-link",
+			".nav-menu li.last-child",
+			".nav-menu li.last-child, .nav-menu li:last-child",
+			".site-header",
+			".nav-menu li.last-child ",
+			".last-child",
+			".comment-list",
+			"For companies, mostly start-ups, looking for cost-effective yet high quality explainer ideos to market their product or service. ",
+			"Leave a comment",
+			".post",
+			"Continue reading ",
+			"<span class=\"screen-reader-text\">Test3</span> <span class=\"meta-nav\">→</span>",
+			".button",
+			"html",
+			"social",
+			".site-main",
+			"contact-body",
+			".site-main",
+			"   width: 194px;",
+			".package .column.active h2",
+			".cell",
+			".banner",
+			".about .banner",
+			"<li class=\"page_item last-child\"><a href=\"contact.html\">GeT a\nQuote</a></li>"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Admin",
+			"http://localhost/ease/",
+			"http://localhost/",
+			"",
+			"images/select-category/fp_selectcategory_0",
+			"<i class=\"fa fa-circle-o\"></i>",
+			"item",
+			".item",
+			".nav-menu li.last-child ,.nav-menu li:last-child ",
+			"For companies, mostly start-ups, looking for cost-effective yet high quality explainer ideos to market their product or service. For companies, mostly start-ups, looking for cost-effective yet high quality explainer ideos to market their product or service. For companies, mostly start-ups, looking for cost-effective yet high quality explainer ideos to market their product or service. ",
+			"3 comments",
+			"Read more",
+			"",
+			"margin:5px 0 5px 0",
+			"margin:0 0 15px 0",
+			"<div class=\"mask-layer\"><a class=\"play-icon\"></a></div>",
+			"class=\"cell play-c\"",
+			"<h2 style=\"color:white;margin:0 15px 0;font-weight:400\">The project name</h2>",
+			"<h2 style=\"color:white;margin:15px 0;font-weight:400\">The project name</h2>",
+			"<h2 style=\"color:white;margin:15px 0\">The project name</h2>",
+			"class=\"project-detail\" style=\"display:none;color:white\"",
+			"media-project",
+			"fancybox-media-project",
+			"",
+			"0.1s;",
+			"0.3s;",
+			"0.3s",
+			"0.5s",
+			"",
+			" <hr class=\"c\">",
+			"mask",
+			".masks",
+			".radial-progress .circle .masks",
+			"",
+			"http://localhost/liveout/",
+			"col-xs-12 col-md-4 col-sm-4 ",
+			"<span class=\"number\">500 new stories</span>",
+			" <div class=\"name\"><a href=\"javascript:void(0)\">Kyrie Irving</a></div>",
+			"jQuery",
+			"<?php echo get_template_directory_uri() ?>/",
+			"",
+			"src=\"<?php echo get_template_directory_uri() ?> . '/minc-theme/",
+			"images/",
+			"homesection",
+			"home section ",
+			"By: Trung Jimmy",
+			"DIENMAYNHANVIET",
+			"#eb9629",
+			"/home/die58346/public_html"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/xampp/htdocs/angular-phonecat/bower.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 366,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/xampp/htdocs/library-less=css/andy/andy.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1020,
+								1029
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sass-textmate-bundle/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 17016.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/xampp/htdocs/fiat-b/html/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 50014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3361,
+								3361
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 33.0
+	},
+	"output.find_results":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "Packages/Ruby/Ruby.sublime-build",
+	"project": "quanlyhocvien.sublime-project",
+	"replace":
+	{
+		"height": 74.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 35.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 552.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 331.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

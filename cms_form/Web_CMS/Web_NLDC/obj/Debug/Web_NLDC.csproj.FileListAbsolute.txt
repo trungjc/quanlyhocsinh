@@ -1,0 +1,15 @@
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\App_Data\RadSpell\en-US.tdf
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\Web_NLDC.dll
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\Web_NLDC.pdb
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\BSO.dll
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\CMS.dll
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\ETO.dll
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\Telerik.Web.UI.dll
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\DAO.dll
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\BSO.pdb
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\ETO.pdb
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\CMS.pdb
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\bin\DAO.pdb
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\obj\Debug\Web_NLDC.csprojResolveAssemblyReference.cache
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\obj\Debug\Web_NLDC.dll
+E:\ES\project\CMS_Core\Web_CMS\Web_NLDC\obj\Debug\Web_NLDC.pdb

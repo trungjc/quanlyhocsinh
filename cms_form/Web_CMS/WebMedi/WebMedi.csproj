@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C2F23DE-14C3-4AB6-A6DA-5D7C9FB8D816}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebMedi</RootNamespace>
+    <AssemblyName>WebMedi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MSCaptcha">
+      <HintPath>..\..\DLL\MSCaptcha\MSCaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI, Version=2013.1.403.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Client\Footer.ascx" />
+    <Content Include="Client\Header.ascx" />
+    <Content Include="Client\ListServices.ascx" />
+    <Content Include="Client\MainHomePage.ascx" />
+    <Content Include="Client\MenuTop.ascx" />
+    <Content Include="Client\Modules\Albums\AlbumsList.ascx" />
+    <Content Include="Client\Modules\Albums\AlbumsView.aspx" />
+    <Content Include="Client\Modules\Contact\Contact.ascx" />
+    <Content Include="Client\Modules\Contact\ContactSucceed.ascx" />
+    <Content Include="Client\Modules\DangKy_TraCuu\MeDi_PhieuXetNghiem.ascx" />
+    <Content Include="Client\Modules\DangKy_TraCuu\Medi_TraCuu.ascx" />
+    <Content Include="Client\Modules\Faq\Faq.ascx" />
+    <Content Include="Client\Modules\Faq\FaqDetail.ascx" />
+    <Content Include="Client\Modules\Faq\Question.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomeListUseJCarousel.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomeOfficialFrame.ascx" />
+    <Content Include="Client\Modules\News\NewsgDetail.ascx" />
+    <Content Include="Client\Modules\News\NewsgList.ascx" />
+    <Content Include="Client\Modules\News\NewsgListGroup.ascx" />
+    <Content Include="Client\Modules\Official\OfficialListGroup.ascx" />
+    <Content Include="Client\Modules\Panel\BlockAlbum.ascx" />
+    <Content Include="Client\Modules\Panel\BlockCounter.ascx" />
+    <Content Include="Client\Modules\Panel\BlockHotNewsGroup.ascx" />
+    <Content Include="Client\Modules\Panel\BlockHTMLView.ascx" />
+    <Content Include="Client\Modules\Panel\BlockMenuLinks.ascx" />
+    <Content Include="Client\Modules\Panel\BlockPopup.ascx" />
+    <Content Include="Client\Modules\Panel\BlockSupport.ascx" />
+    <Content Include="Client\Modules\Panel\BlockVectorMap.ascx" />
+    <Content Include="Client\Modules\Panel\BlockVideo.ascx" />
+    <Content Include="Client\Modules\Panel\BlockWebLink.ascx" />
+    <Content Include="Client\Modules\Panel\Block_Infomation.ascx" />
+    <Content Include="Client\Modules\Video\VideoList.ascx" />
+    <Content Include="Client\PanelLeftModules.ascx" />
+    <Content Include="Client\PanelRightModules.ascx" />
+    <Content Include="CreateModuleFile.aspx" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\jcarousel\jcarousel.responsive.css" />
+    <Content Include="css\jvector\css\jqvmap.css" />
+    <Content Include="css\jvector\css\stylesheet.css" />
+    <Content Include="css\jvector\js\jquery.vmap.delhi.js" />
+    <Content Include="css\jvector\js\jquery.vmap.js" />
+    <Content Include="css\media-content\960_12_col.css" />
+    <Content Include="css\media-content\flexslider.css" />
+    <Content Include="css\media-content\jqueryslidemenu.css" />
+    <Content Include="css\media-content\nivo-slider.css" />
+    <Content Include="css\media-content\reset.css" />
+    <Content Include="css\media-content\skin1.css" />
+    <Content Include="css\media-content\text.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\style_albums.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\1.jpg" />
+    <Content Include="Img\2.jpg" />
+    <Content Include="Img\3.jpg" />
+    <Content Include="Img\4.jpg" />
+    <Content Include="Img\5.jpg" />
+    <Content Include="Img\albums_frame1.png" />
+    <Content Include="Img\album_avatar.png" />
+    <Content Include="Img\bg-content.jpg" />
+    <Content Include="Img\cauhoi.png" />
+    <Content Include="Img\favicon.ico" />
+    <Content Include="Img\flag-en.png" />
+    <Content Include="Img\flag-vn.png" />
+    <Content Include="Img\icons\grid.png" />
+    <Content Include="Img\icon-home.png" />
+    <Content Include="Img\icon-sidebar.jpg" />
+    <Content Include="Img\icons\loading.gif" />
+    <Content Include="Img\icons\next.png" />
+    <Content Include="Img\icons\next_thumb.png" />
+    <Content Include="Img\icons\pause.png" />
+    <Content Include="Img\icons\play.png" />
+    <Content Include="Img\icons\prev.png" />
+    <Content Include="Img\icons\prev_thumb.png" />
+    <Content Include="Img\icons\up.png" />
+    <Content Include="Img\logo_left.jpg" />
+    <Content Include="Img\logo_right.jpg" />
+    <Content Include="Img\questions.png" />
+    <Content Include="Img\tracuu_tructuyen.jpg" />
+    <Content Include="Img\video_avatar.png" />
+    <Content Include="Img\video_frame3.png" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jcarousel\jcarousel.responsive.js" />
+    <Content Include="js\jcarousel\jquery.jcarousel.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\js-content\custom.js" />
+    <Content Include="js\js-content\jquery-1.7.1.min.js" />
+    <Content Include="js\js-content\jquery.bxSlider.min.js" />
+    <Content Include="js\js-content\jquery.elastislide.js" />
+    <Content Include="js\js-content\jquery.flexslider.js" />
+    <Content Include="js\js-content\jquery.nivo.slider.js" />
+    <Content Include="js\js-content\jquery.toggleElements.pack.js" />
+    <Content Include="js\js-content\jquery.tools.min.js" />
+    <Content Include="js\js-content\jqueryslidemenu.js" />
+    <Content Include="js\js-content\scrolltop.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Resource.vi.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.vi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\ListServices.ascx.cs">
+      <DependentUpon>ListServices.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ListServices.ascx.designer.cs">
+      <DependentUpon>ListServices.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\MainHomePage.ascx.cs">
+      <DependentUpon>MainHomePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\MainHomePage.ascx.designer.cs">
+      <DependentUpon>MainHomePage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\MenuTop.ascx.cs">
+      <DependentUpon>MenuTop.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\MenuTop.ascx.designer.cs">
+      <DependentUpon>MenuTop.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Albums\AlbumsList.ascx.cs">
+      <DependentUpon>AlbumsList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Albums\AlbumsList.ascx.designer.cs">
+      <DependentUpon>AlbumsList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Albums\AlbumsView.aspx.cs">
+      <DependentUpon>AlbumsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Albums\AlbumsView.aspx.designer.cs">
+      <DependentUpon>AlbumsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Contact\Contact.ascx.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Contact\Contact.ascx.designer.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Contact\ContactSucceed.ascx.cs">
+      <DependentUpon>ContactSucceed.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Contact\ContactSucceed.ascx.designer.cs">
+      <DependentUpon>ContactSucceed.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\DangKy_TraCuu\MeDi_PhieuXetNghiem.ascx.cs">
+      <DependentUpon>MeDi_PhieuXetNghiem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\DangKy_TraCuu\MeDi_PhieuXetNghiem.ascx.designer.cs">
+      <DependentUpon>MeDi_PhieuXetNghiem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\DangKy_TraCuu\Medi_TraCuu.ascx.cs">
+      <DependentUpon>Medi_TraCuu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\DangKy_TraCuu\Medi_TraCuu.ascx.designer.cs">
+      <DependentUpon>Medi_TraCuu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Faq\Faq.ascx.cs">
+      <DependentUpon>Faq.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Faq\Faq.ascx.designer.cs">
+      <DependentUpon>Faq.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Faq\FaqDetail.ascx.cs">
+      <DependentUpon>FaqDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Faq\FaqDetail.ascx.designer.cs">
+      <DependentUpon>FaqDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Faq\Question.ascx.cs">
+      <DependentUpon>Question.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Faq\Question.ascx.designer.cs">
+      <DependentUpon>Question.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeListUseJCarousel.ascx.cs">
+      <DependentUpon>MainHomeListUseJCarousel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeListUseJCarousel.ascx.designer.cs">
+      <DependentUpon>MainHomeListUseJCarousel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeOfficialFrame.ascx.cs">
+      <DependentUpon>MainHomeOfficialFrame.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeOfficialFrame.ascx.designer.cs">
+      <DependentUpon>MainHomeOfficialFrame.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\News\NewsgDetail.ascx.cs">
+      <DependentUpon>NewsgDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\News\NewsgDetail.ascx.designer.cs">
+      <DependentUpon>NewsgDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\News\NewsgList.ascx.cs">
+      <DependentUpon>NewsgList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\News\NewsgList.ascx.designer.cs">
+      <DependentUpon>NewsgList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\News\NewsgListGroup.ascx.cs">
+      <DependentUpon>NewsgListGroup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\News\NewsgListGroup.ascx.designer.cs">
+      <DependentUpon>NewsgListGroup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Official\OfficialListGroup.ascx.cs">
+      <DependentUpon>OfficialListGroup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Official\OfficialListGroup.ascx.designer.cs">
+      <DependentUpon>OfficialListGroup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockAlbum.ascx.cs">
+      <DependentUpon>BlockAlbum.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockAlbum.ascx.designer.cs">
+      <DependentUpon>BlockAlbum.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockCounter.ascx.cs">
+      <DependentUpon>BlockCounter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockCounter.ascx.designer.cs">
+      <DependentUpon>BlockCounter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockHotNewsGroup.ascx.cs">
+      <DependentUpon>BlockHotNewsGroup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockHotNewsGroup.ascx.designer.cs">
+      <DependentUpon>BlockHotNewsGroup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockHTMLView.ascx.cs">
+      <DependentUpon>BlockHTMLView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockHTMLView.ascx.designer.cs">
+      <DependentUpon>BlockHTMLView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockMenuLinks.ascx.cs">
+      <DependentUpon>BlockMenuLinks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockMenuLinks.ascx.designer.cs">
+      <DependentUpon>BlockMenuLinks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockPopup.ascx.cs">
+      <DependentUpon>BlockPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockPopup.ascx.designer.cs">
+      <DependentUpon>BlockPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockSupport.ascx.cs">
+      <DependentUpon>BlockSupport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockSupport.ascx.designer.cs">
+      <DependentUpon>BlockSupport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockVectorMap.ascx.cs">
+      <DependentUpon>BlockVectorMap.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockVectorMap.ascx.designer.cs">
+      <DependentUpon>BlockVectorMap.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockVideo.ascx.cs">
+      <DependentUpon>BlockVideo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockVideo.ascx.designer.cs">
+      <DependentUpon>BlockVideo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockWebLink.ascx.cs">
+      <DependentUpon>BlockWebLink.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockWebLink.ascx.designer.cs">
+      <DependentUpon>BlockWebLink.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\Block_Infomation.ascx.cs">
+      <DependentUpon>Block_Infomation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\Block_Infomation.ascx.designer.cs">
+      <DependentUpon>Block_Infomation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Video\VideoList.ascx.cs">
+      <DependentUpon>VideoList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Video\VideoList.ascx.designer.cs">
+      <DependentUpon>VideoList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\PanelLeftModules.ascx.cs">
+      <DependentUpon>PanelLeftModules.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\PanelLeftModules.ascx.designer.cs">
+      <DependentUpon>PanelLeftModules.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\PanelRightModules.ascx.cs">
+      <DependentUpon>PanelRightModules.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\PanelRightModules.ascx.designer.cs">
+      <DependentUpon>PanelRightModules.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateModuleFile.aspx.cs">
+      <DependentUpon>CreateModuleFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateModuleFile.aspx.designer.cs">
+      <DependentUpon>CreateModuleFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BSO\BSO.csproj">
+      <Project>{A67B5E36-E58C-4E4F-BA03-87D0370B4D68}</Project>
+      <Name>BSO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS\CMS\CMS.csproj">
+      <Project>{305598FA-37D1-41AB-A023-EB6BA8240A0D}</Project>
+      <Name>CMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ETO\ETO.csproj">
+      <Project>{F8EB62FE-6C30-4BA8-ACF5-8A5ABA9BED64}</Project>
+      <Name>ETO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="css\bootstrap-theme.css.map" />
+    <None Include="css\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Resource.vi.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Resource.vi.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6200</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

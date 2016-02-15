@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PanelRightModules.ascx.cs" Inherits="Fomusa.Client.PanelRightModules" %>
+<asp:PlaceHolder ID="AreaRightPanel" runat="server"></asp:PlaceHolder>

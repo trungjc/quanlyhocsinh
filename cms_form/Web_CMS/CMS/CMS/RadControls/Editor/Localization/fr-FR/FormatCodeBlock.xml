@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<localization>
+
+ 	<string id="PasteSourceCode">Code source de pâte ci-dessous :</string>
+	<string id="CodeLanguage">Langue de code</string>
+	<string id="SnippetMaxHeight">Extrait MaxTaille</string>
+	<string id="ShowLineNumbers">Show line numbers</string>
+	<string id="SnippetMaxWidth">Extrait MaxLargeur</string>
+	<string id="Preview">Prévision</string>
+	<string id="PreviewCode">Prévision Code</string>
+	<string id="Working">Fonctionnement ...</string>
+</localization>

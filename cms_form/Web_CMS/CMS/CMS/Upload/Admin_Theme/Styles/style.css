@@ -1,0 +1,446 @@
+
+/* CSS Document */
+body{
+	font-size:11px;
+	font-family:Tahoma;
+	color:#000;
+	padding:0;
+	margin:0;
+	width:100%;
+	background-color:#fff;
+}
+html {
+	height: 100%!important;
+	height: auto;
+	margin:0;
+	padding:0;
+	width:100%
+}
+img {
+	border:0;
+	margin:0;
+	padding:0;
+}
+p {
+	line-height:150%;
+}
+
+a:link    { color: #0B55C4; text-decoration: none; }
+a:visited { color: #0B55C4; text-decoration: none; }
+a:hover   { text-decoration: underline; }
+
+/*---------------------------------Banner------------------------------*/
+
+#page{
+	padding:10px;
+	width:100%;
+}
+#banner{
+	width:100%;
+	height:49px;
+	padding:10px 0 0 0;
+}
+.banner-left{
+	background:url(../images/banner-left.png) top left no-repeat;
+	height:49px;
+	margin:0;
+	padding:0;
+}
+.bg-banner{
+	background: url(../images/banner-bg.gif) top left repeat-x;
+	height:49px;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+.banner-rig{
+	background:url(../images/banner-rig.gif) top left no-repeat;
+	width:12px;
+	height:49px;
+	float:right;
+	padding:0;
+	margin:0
+}
+
+
+/*---------------------------------Content-----------------------------*/
+
+#border-bottom 			{ background:url(../images/boder-bottom.gif) repeat-x; }
+#border-bottom div  	{ background:url(../images/rig-bottom.png) 100% 0 no-repeat; }
+#border-bottom div div 	{ background: url(../images/left-bottom.png) no-repeat; height: 6px; }
+
+
+#boder-content {
+	text-align:left;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+#boder-content .padding  { padding: 10px 10px 5px 10px; }
+#login{
+	background:#fff;
+	width:491px;
+	padding-top:20px;
+	padding-bottom:3px;
+
+}
+.login-top{
+	background:url(../images/login-top.gif) top left no-repeat;
+	width:493px;
+	height:10px;
+	padding:0;
+	margin:0;
+}
+.login-bg{
+	border-left: 1px solid #cdcdcd;
+	border-right: 1px solid #cdcdcd;
+	width:491px;
+	padding:0;
+	margin-bottom:-10px;
+	margin-top:-5px;
+}
+*html.login-bg{
+	padding:0;
+	margin:0;
+}
+.txt-title{
+	font-size:20px;
+	font-family:Tahoma;
+	color:#0b55c4;
+	padding:10px;
+	font-weight:700;
+}
+.login-bottom{
+	background:url(../images/login-bottom.gif) bottom left no-repeat;
+	width:493px;
+	height:10px;
+}
+*html.login-bottom{
+	padding:0;
+	margin:0;
+}
+
+.from-login{
+	width:300px;
+	padding:10px 10px 10px 20px;
+	margin:0;
+	float:right;
+	height:auto;
+}
+.bg-top-from{
+	background:url(../images/boder-top.gif) top left repeat-x;
+	width:300px;
+	padding:0;
+	margin:0;
+	height:6px;
+}
+.left-top-from{
+	background:url(../images/left-top.png) top left no-repeat;
+	width:6px;
+	height:6px;
+	float:left;
+}
+.rig-top-from{
+	background:url(../images/rig-top.png) top right no-repeat;
+	width:6px;
+	height:6px;
+	float:right;
+}
+.bg-bottom-from{
+	background:url(../images/boder-bottom.gif) top left repeat-x;
+	width:300px;
+	padding:0;
+	margin:0;
+	height:6px;
+}
+.left-botoom-from{
+	background:url(../images/left-bottom.png) top left no-repeat;
+	width:6px;
+	height:6px;
+	float:left;
+}
+.rig-bottom-from{
+	background:url(../images/rig-bottom.png) top right no-repeat;
+	width:6px;
+	height:6px;
+	float:left;
+}
+.bg-line-from{
+	width:300px;
+	margin-top:-7px;
+	padding-right:20px;
+}
+
+.dieu-kien-login{
+	width:135px;
+	font-size:11px;
+	color:#000;
+	margin:10px;
+	font-weight:normal;
+}
+.back-hone{
+	color:#0b55c4;
+	width:135px;
+	font-size:11px;
+	margin:10px;
+	font-weight:normal;
+}
+#lock{
+	background:url(../images/login_lock.jpg) 50% 0 no-repeat;
+	width:120px;
+	height:137px;
+}
+#from-center-login{
+	padding:10px;
+	margin-bottom:20px;
+}
+.txt-from{
+	color:#666;
+	font-size:11px;
+	font-weight:bold;
+	width:125px;
+	text-align:right;
+	margin:5px;
+	padding:5px 0;
+
+}
+.use-input{
+	width:120px;
+	height:15px;
+	float:right;
+	margin-top:3px;
+}
+.use-input  input{
+	border: 1px solid #cdcdcd;
+	width:120px;
+	height:15px;
+	marign-right:10px;
+}
+.use-input  select{
+	border: 1px solid #cdcdcd;
+	width:120px;
+	height:20px;
+	font-size:12px;
+	marign-right:10px;
+}
+
+.button-login{
+	float:right;
+	width:92px;
+	height:26px;
+	padding:5px;
+}
+
+/*------------------------Footer-----------------------------*/
+.footer{
+	font-size:11px;
+	color:#000;
+	text-align:center;
+	font-weight:normal;
+	padding:5px;
+}
+
+.footer  span {
+	color:#0b55c4;
+}
+
+/*------------------------------------------Home--------------------------------------------*/
+
+.bg-hello-exit{
+	background:#eaeff2;
+	height:25px;
+	border-bottom:1px solid #cdcdcd;
+	width:100%;
+}
+.hello-exit{
+	width:200px;
+	padding:0 5px;
+	float:right;
+	height:25px;
+	line-height:25px;
+}
+.hello-exit  span {
+	font-weight:bold;
+}
+
+.hello-exit  img {
+	padding: 0 5px;
+	margin-bottom:-3px;
+}
+
+.bg-home{
+	background:#f9f9f9;
+	border:1px solid #cdcdcd;
+	padding:5px;
+}
+.bg-icon-home{
+	width:120px;
+	height:95px;
+	border:1px solid #f0f0f0;
+	margin:5px;
+	cursor:pointer;
+	color:#666;
+}
+.bg-icon-home	a,
+.bg-icon-home	a:visited,
+.bg-icon-home	a:after,
+.bg-icon-home	a:before		{
+	margin:5px;
+	cursor:pointer;
+	color:#666;
+	text-decoration:none;
+}
+.bg-icon-home	a:hover,
+.bg-icon-home	a:focus,
+.bg-icon-home	a:active	{
+	margin:5px;
+	cursor:pointer;
+	color:#0b55c4;
+	text-decoration:underline;
+}
+.bg-icon-home  img {
+	padding:5px 5px 10px 5px;
+
+}
+.bg-rig-home{
+	background:#f6f6f6;
+	border:1px solid #cdcdcd;
+	width:277px;
+	margin:5px;
+}
+.txt-title-home{
+	border-bottom:1px solid #cdcdcd;
+	background:#eaeff2;
+	font-weight:bold;
+	color:#666;
+	text-indent:10px;
+	height:22px;
+}
+.txt-gt-home{
+	color:#000;
+	padding:5px;
+	font-weight:normal;
+}
+.txt-gt-home  span {
+	font-weight:bold;
+}
+.txt-gt-home  img {
+	padding-right:10px;
+	padding-left:10px;
+}
+
+
+/*------------------------------------------Tao moi--------------------------------------------*/
+
+#icon-titlet{
+	background:#f9f9f9;
+	border:1px solid #cdcdcd;
+	height:62px;
+	width:100%;
+	padding:5px;
+	margin-bottom:10px;
+}
+#icon-titlet  img {
+	margin:5px
+}
+
+.txt-big-title{
+	color:#0b55c4;
+	font-size:22px;
+	text-indent:5px;
+	font-weight:normal;
+}
+.txt-big-title  span {
+	font-size:12px;
+	font-weight:bold;
+	color:#0b55c4;
+	padding-left:5px;
+}
+#icon-small{
+	width:450px;
+	padding:0 5px;
+	margin:0;
+	float:right;
+	text-align:center;
+}
+#icon-small{
+	cursor:pointer;
+}
+
+.bg-line-cham{
+	background:#fff;
+	border:1px #cdcdcd dashed;
+	width:277px;
+	margin:5px;
+}
+.txt-from-taomoi{
+	
+	font-weight:bold;
+	padding:10px 5px 5px 10px;
+	text-decoration:none;
+}
+.btn_search{
+	padding:-2px;
+}
+.txt-form-create-input{
+	border: 1px solid #cdcdcd;
+	height:15px;
+	marign-right:0px;
+}
+.txt-form-create-select{
+	border: 1px solid #cdcdcd;
+	height:20px;
+	marign-right:10px;
+}
+.txt-form-create-file{
+	border: 1px solid #cdcdcd;
+	height:23px;
+	marign-right:10px;
+	background-color:#ffffff;
+}
+
+.pad-left-list{
+	padding-left:20px;
+}
+.pad-left-list-sub{
+	padding-left:40px;
+}
+/*-------------------- List page------------------*/
+
+
+.txt-from-lable-search{
+	
+	font-weight:bold;
+	padding:10px 5px 5px 10px;
+	text-decoration:none;
+}
+.txt-form-list-input{
+	border: 1px solid #cdcdcd;
+	height:15px;
+	marign-right:0px;
+}
+.gridviewBorder{
+	border:1px solid #cdcdcd;
+}
+
+.gridviewTitleBg{
+	background-color:#EAEFF2;
+	line-height:23px;
+	height:23px;
+	font-weight:bold;
+	padding-left:0px;
+	text-decoration:none;
+}
+.gridviewCellBottom{
+	border-bottom:1px solid #cdcdcd;
+}
+.gridviewCellRight{
+	border-right:1px solid #cdcdcd;
+}
+.search_panel{
+	line-height:50px;
+	height:50px;
+}
+
+
+
+

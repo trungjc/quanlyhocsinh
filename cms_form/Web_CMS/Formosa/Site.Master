@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Fomusa.SiteMaster" %>
+
+<%@ Register Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Src="~/Client/Banner.ascx" TagName="Banner" TagPrefix="panelBanner" %>
+<%@ Register Src="~/Client/BannerIntro.ascx" TagName="BannerIntro" TagPrefix="panelBannerIntro" %>
+<%@ Register Src="~/Client/Footer.ascx" TagName="Footer" TagPrefix="panelFooter" %>
+<%@ Register Src="~/Client/PanelRightModules.ascx" TagName="PanelRight" TagPrefix="panelPanelRight" %>
+<%@ Register Src="~/Client/PanelLeftModules.ascx" TagName="PanelLeft" TagPrefix="panelPanelLeft" %>
+<%@ Register Src="~/Client/Modules/MainHome/MainHomeAdvControl.ascx" TagName="MainHomeAdv"
+    TagPrefix="panelMainHomeAdv" %>
+<%@ Register Src="~/Client/Modules/Menu/MenuFooter.ascx" TagName="MenuFooter" TagPrefix="panelMenuFooter" %>
+<%@ Register Src="~/Client/Modules/Panel/BlockPopup.ascx" TagName="BlockPopup" TagPrefix="panelBlockPopup" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Src="Client/BannerMenu.ascx" TagName="BannerMenu" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>CMS Web</title>
+    <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="Scripts/menu/menu.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="CSS/style_customer.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type='text/javascript'>
+        function newwindow(str) {
+            window.open(str, 'jav', 'width=800,height=700,resizable=yes');
+        }
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23835077-3']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="cssNLDC" onload="LoadFlash();">
+    <script type="text/javascript" src="<%=Page.ResolveUrl("~/")%>Scripts/libPopup.js">    </script>
+    <script type="text/javascript">
+        var slideTime = 500;
+        var floatAtBottom = false;
+        function floating_init() {
+            winOnResize(); // set initial position
+            xAddEventListener(window, 'resize', winOnResize, false);
+            xAddEventListener(window, 'scroll', winOnScroll, false);
+        }
+        function winOnResize() {
+            checkScreenWidth();
+            winOnScroll(); // initial slide
+        }
+        function winOnScroll() {
+            var y = xScrollTop();
+            if (floatAtBottom) {
+                y += xClientHeight() - xHeight('light');
+            }
+            xSlideTo('light', (screen.width) / 2 - 330, y + 25, slideTime);
+        }
+        function checkScreenWidth() {
+            if (screen.width <= 800) {
+                document.getElementById('light').style.display = 'none';
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function LoadFlash() {
+            if (document.getElementById("Oload").value == 1) {
+                document.getElementById('light').style.display = 'block';
+                document.getElementById('fade').style.display = 'block'
+            }
+            else {
+                return;
+            }
+            floating_init();
+        }  
+    </script>
+    <form id="form1" runat="server">
+    <div id="header">
+        <panelBanner:Banner ID="panelBanner1" runat="server" />
+        <panelBannerIntro:BannerIntro ID="panelBannerIntro" runat="server" />
+        <uc1:BannerMenu ID="BannerMenu1" runat="server" />
+        <!-- end #header -->
+    </div>
+    <div id="container">
+        <div id="sidebar1">
+            <div class="panel_left">
+                <panelPanelLeft:PanelLeft ID="panelleft1" runat="server" />
+            </div>
+            <!-- end #sidebar1 -->
+        </div>
+        <div id="sidebar2">
+            <div class="panel_right">
+                <panelPanelRight:PanelRight ID="panelright1" runat="server" />
+            </div>
+            <!-- end #sidebar2 -->
+        </div>
+        <div id="mainContent">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- end #mainContent -->
+        </div>
+        <!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats -->
+        <br class="clearfloat" />
+        <!-- end #container -->
+    </div>
+    <div id="footer">
+        <panelFooter:Footer ID="panelFooter1" runat="server" />
+        <!-- end #footer -->
+    </div>
+    </form>
+    <div id="light" class="white_content">
+        <panelBlockPopup:BlockPopup ID="blockPopup1" runat="server" />
+        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">
+            <img src="<%=ResolveUrl("~/")%>images/closelabel.gif" style="border-width: 0px;" />
+        </a>
+    </div>
+    <div id="fade" class="black_overlay">
+    </div>
+</body>
+</html>

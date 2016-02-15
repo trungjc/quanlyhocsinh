@@ -1,0 +1,16 @@
+<Client>
+  <MainHome>
+    <md>MainHomeCategory.ascx</md>
+    <md>MainHomeLinks.ascx</md>
+    <md>MainHomeNews.ascx</md>
+    <md>MainHomePartners.ascx</md>
+    <md>MainHomeSlideContact.ascx</md>
+    <md>MainHomeSlider.ascx</md>
+  </MainHome>
+  <Panel>
+    <md>BlockImageLib.ascx</md>
+    <md>BlockMaps.ascx</md>
+    <md>BlockVideo.ascx</md>
+    <md>BlockWebLink.ascx</md>
+  </Panel>
+</Client>

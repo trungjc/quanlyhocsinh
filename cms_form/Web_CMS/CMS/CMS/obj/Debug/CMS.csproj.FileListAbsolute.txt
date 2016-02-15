@@ -1,0 +1,15 @@
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\App_Data\RadSpell\en-US.tdf
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\CMS.dll
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\CMS.pdb
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\AjaxControlToolkit.dll
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\BSO.dll
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\DAO.dll
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\ETO.dll
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\Telerik.Web.UI.dll
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\Telerik.Web.UI.Skins.dll
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\BSO.pdb
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\DAO.pdb
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\bin\ETO.pdb
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\obj\Debug\CMS.csprojResolveAssemblyReference.cache
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\obj\Debug\CMS.dll
+E:\ES\project\CMS_Core\Web_CMS\CMS\CMS\obj\Debug\CMS.pdb

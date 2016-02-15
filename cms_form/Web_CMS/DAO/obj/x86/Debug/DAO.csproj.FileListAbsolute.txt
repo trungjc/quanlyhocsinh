@@ -1,0 +1,7 @@
+E:\ES\project\CMS_Core\Web_CMS\DAO\bin\Debug\DAO.dll
+E:\ES\project\CMS_Core\Web_CMS\DAO\bin\Debug\DAO.pdb
+E:\ES\project\CMS_Core\Web_CMS\DAO\bin\Debug\ETO.dll
+E:\ES\project\CMS_Core\Web_CMS\DAO\bin\Debug\ETO.pdb
+E:\ES\project\CMS_Core\Web_CMS\DAO\obj\x86\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\ES\project\CMS_Core\Web_CMS\DAO\obj\x86\Debug\DAO.dll
+E:\ES\project\CMS_Core\Web_CMS\DAO\obj\x86\Debug\DAO.pdb

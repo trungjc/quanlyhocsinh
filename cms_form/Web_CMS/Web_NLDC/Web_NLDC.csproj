@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A914FF9-48CB-4FBC-BEF7-A9F9E5C35A6D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web_NLDC</RootNamespace>
+    <AssemblyName>Web_NLDC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Client\Footer.ascx" />
+    <Content Include="Client\Header.ascx" />
+    <Content Include="Client\MainHomePage.ascx" />
+    <Content Include="Client\MenuTop.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomeCategory.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomeChildNews.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomeChuyenDe.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomeImageLibrary.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomeLinks.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomeNews.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomePartners.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomeSlideContact.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomeSlider.ascx" />
+    <Content Include="Client\Modules\MainHome\MainHomeVideo.ascx" />
+    <Content Include="Client\Modules\Panel\BlockImageLib.ascx" />
+    <Content Include="Client\Modules\Panel\BlockMaps.ascx" />
+    <Content Include="Client\Modules\Panel\BlockVideo.ascx" />
+    <Content Include="Client\Modules\Panel\BlockWebLink.ascx" />
+    <Content Include="Client\PanelLeftModules.ascx" />
+    <Content Include="Client\PanelRightModules.ascx" />
+    <Content Include="CreateModuleFile.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\DemoChart.js" />
+    <Content Include="Scripts\DemoLiveData.js" />
+    <Content Include="Scripts\Test.htm" />
+    <Content Include="Scripts\TestScrollEffect.htm" />
+    <Content Include="Scripts\VN_Map.js" />
+    <Content Include="Styles\css\bootstrap-theme.css" />
+    <Content Include="Styles\css\bootstrap-theme.min.css" />
+    <Content Include="Styles\css\bootstrap.css" />
+    <Content Include="Styles\css\bootstrap.min.css" />
+    <Content Include="Styles\css\css-menu\jquery.smartmenus.bootstrap.css" />
+    <Content Include="Styles\css\style.css" />
+    <Content Include="Styles\engine1\arrow-next.png" />
+    <Content Include="Styles\engine1\arrow-prev.png" />
+    <Content Include="Styles\engine1\arrows.png" />
+    <Content Include="Styles\engine1\bg.png" />
+    <Content Include="Styles\engine1\bullet.png" />
+    <Content Include="Styles\engine1\fullscreen.png" />
+    <Content Include="Styles\engine1\jquery.js" />
+    <Content Include="Styles\engine1\pause.png" />
+    <Content Include="Styles\engine1\play.png" />
+    <Content Include="Styles\engine1\script.js" />
+    <Content Include="Styles\engine1\shadow.png" />
+    <Content Include="Styles\engine1\style.css" />
+    <Content Include="Styles\engine1\style.mod.css" />
+    <Content Include="Styles\engine1\triangle.png" />
+    <Content Include="Styles\engine1\wowslider.js" />
+    <Content Include="Styles\engine1\wowslider.mod.js" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Styles\img\a11.png" />
+    <Content Include="Styles\img\a21.png" />
+    <Content Include="Styles\img\background-footter.jpg" />
+    <Content Include="Styles\img\blue.jpg" />
+    <Content Include="Styles\img\categories1.jpg" />
+    <Content Include="Styles\img\categories2.jpg" />
+    <Content Include="Styles\img\categories3.jpg" />
+    <Content Include="Styles\img\categories4.jpg" />
+    <Content Include="Styles\img\categories5.jpg" />
+    <Content Include="Styles\img\categories6.jpg" />
+    <Content Include="Styles\img\categories7.jpg" />
+    <Content Include="Styles\img\categories8.jpg" />
+    <Content Include="Styles\img\header.jpg" />
+    <Content Include="Styles\img\icon1.png" />
+    <Content Include="Styles\img\icon2.png" />
+    <Content Include="Styles\img\icon3.png" />
+    <Content Include="Styles\img\icon4.png" />
+    <Content Include="Styles\img\links1.jpg" />
+    <Content Include="Styles\img\links2.jpg" />
+    <Content Include="Styles\img\links3.jpg" />
+    <Content Include="Styles\img\links4.jpg" />
+    <Content Include="Styles\img\links5.jpg" />
+    <Content Include="Styles\img\links6.jpg" />
+    <Content Include="Styles\img\logo.jpg" />
+    <Content Include="Styles\img\logo1.jpg" />
+    <Content Include="Styles\img\logo2.jpg" />
+    <Content Include="Styles\img\logo3.jpg" />
+    <Content Include="Styles\img\logo4.jpg" />
+    <Content Include="Styles\img\logo5.jpg" />
+    <Content Include="Styles\img\logo6.jpg" />
+    <Content Include="Styles\img\new1.jpg" />
+    <Content Include="Styles\img\new2.jpg" />
+    <Content Include="Styles\img\new3.jpg" />
+    <Content Include="Styles\img\purple.jpg" />
+    <Content Include="Styles\img\red.jpg" />
+    <Content Include="Styles\img\slide-new.jpg" />
+    <Content Include="Styles\img\Slide1.jpg" />
+    <Content Include="Styles\img\vector-map.jpg" />
+    <Content Include="Styles\js\bootstrap.js" />
+    <Content Include="Styles\js\bootstrap.min.js" />
+    <Content Include="Styles\js\js-menu\bootstrap.min.js" />
+    <Content Include="Styles\js\js-menu\jquery.smartmenus.bootstrap.js" />
+    <Content Include="Styles\js\js-menu\jquery.smartmenus.js" />
+    <Content Include="Styles\js\js-slider\jssor.slider.mini.js" />
+    <Content Include="Styles\js\npm.js" />
+    <Content Include="Styles\js\stylejs.js" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\MainHomePage.ascx.cs">
+      <DependentUpon>MainHomePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\MainHomePage.ascx.designer.cs">
+      <DependentUpon>MainHomePage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\MenuTop.ascx.cs">
+      <DependentUpon>MenuTop.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\MenuTop.ascx.designer.cs">
+      <DependentUpon>MenuTop.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeCategory.ascx.cs">
+      <DependentUpon>MainHomeCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeCategory.ascx.designer.cs">
+      <DependentUpon>MainHomeCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeChildNews.ascx.cs">
+      <DependentUpon>MainHomeChildNews.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeChildNews.ascx.designer.cs">
+      <DependentUpon>MainHomeChildNews.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeChuyenDe.ascx.cs">
+      <DependentUpon>MainHomeChuyenDe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeChuyenDe.ascx.designer.cs">
+      <DependentUpon>MainHomeChuyenDe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeImageLibrary.ascx.cs">
+      <DependentUpon>MainHomeImageLibrary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeImageLibrary.ascx.designer.cs">
+      <DependentUpon>MainHomeImageLibrary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeLinks.ascx.cs">
+      <DependentUpon>MainHomeLinks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeLinks.ascx.designer.cs">
+      <DependentUpon>MainHomeLinks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeNews.ascx.cs">
+      <DependentUpon>MainHomeNews.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeNews.ascx.designer.cs">
+      <DependentUpon>MainHomeNews.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomePartners.ascx.cs">
+      <DependentUpon>MainHomePartners.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomePartners.ascx.designer.cs">
+      <DependentUpon>MainHomePartners.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeSlideContact.ascx.cs">
+      <DependentUpon>MainHomeSlideContact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeSlideContact.ascx.designer.cs">
+      <DependentUpon>MainHomeSlideContact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeSlider.ascx.cs">
+      <DependentUpon>MainHomeSlider.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeSlider.ascx.designer.cs">
+      <DependentUpon>MainHomeSlider.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeVideo.ascx.cs">
+      <DependentUpon>MainHomeVideo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\MainHome\MainHomeVideo.ascx.designer.cs">
+      <DependentUpon>MainHomeVideo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockImageLib.ascx.cs">
+      <DependentUpon>BlockImageLib.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockImageLib.ascx.designer.cs">
+      <DependentUpon>BlockImageLib.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockMaps.ascx.cs">
+      <DependentUpon>BlockMaps.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockMaps.ascx.designer.cs">
+      <DependentUpon>BlockMaps.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockVideo.ascx.cs">
+      <DependentUpon>BlockVideo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockVideo.ascx.designer.cs">
+      <DependentUpon>BlockVideo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockWebLink.ascx.cs">
+      <DependentUpon>BlockWebLink.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Modules\Panel\BlockWebLink.ascx.designer.cs">
+      <DependentUpon>BlockWebLink.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\PanelLeftModules.ascx.cs">
+      <DependentUpon>PanelLeftModules.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\PanelLeftModules.ascx.designer.cs">
+      <DependentUpon>PanelLeftModules.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\PanelRightModules.ascx.cs">
+      <DependentUpon>PanelRightModules.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\PanelRightModules.ascx.designer.cs">
+      <DependentUpon>PanelRightModules.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateModuleFile.aspx.cs">
+      <DependentUpon>CreateModuleFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateModuleFile.aspx.designer.cs">
+      <DependentUpon>CreateModuleFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Client\Modules\Faq\" />
+    <Folder Include="Client\Modules\News\" />
+    <Folder Include="Client\Modules\Official\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BSO\BSO.csproj">
+      <Project>{A67B5E36-E58C-4E4F-BA03-87D0370B4D68}</Project>
+      <Name>BSO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS\CMS\CMS.csproj">
+      <Project>{305598FA-37D1-41AB-A023-EB6BA8240A0D}</Project>
+      <Name>CMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ETO\ETO.csproj">
+      <Project>{F8EB62FE-6C30-4BA8-ACF5-8A5ABA9BED64}</Project>
+      <Name>ETO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Styles\css\bootstrap-theme.css.map" />
+    <None Include="Styles\css\bootstrap.css.map" />
+    <None Include="Styles\engine1\Thumbs.db" />
+    <None Include="Styles\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Styles\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Styles\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Styles\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3390</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

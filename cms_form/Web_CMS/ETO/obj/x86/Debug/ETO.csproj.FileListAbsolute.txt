@@ -1,0 +1,4 @@
+E:\ES\project\CMS_Core\Web_CMS\ETO\bin\Debug\ETO.dll
+E:\ES\project\CMS_Core\Web_CMS\ETO\bin\Debug\ETO.pdb
+E:\ES\project\CMS_Core\Web_CMS\ETO\obj\x86\Debug\ETO.dll
+E:\ES\project\CMS_Core\Web_CMS\ETO\obj\x86\Debug\ETO.pdb

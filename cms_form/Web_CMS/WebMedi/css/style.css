@@ -1,0 +1,236 @@
+@import '//fonts.googleapis.com/css?family=Lato:400,400italic|Arvo:700,400,400italic';
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font: 15px/1.5 Arial, 'Lato' , 'Helvetica Neue' , Helvetica, sans-serif;
+    color: #4E443C; /* text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75); */
+}
+
+#menu-home a
+{
+    color: #fff;
+    line-height: 46px;
+    padding-left: 5px;
+}
+#menu-home a img:hover
+{
+    transform: scale(1.04,1.04);
+    -webkit-transform: scale(1.04,1.04);
+    -moz-transform: scale(1.04,1.04);
+    -o-transform: scale(1.04,1.04);
+    -ms-transform: scale(1.04,1.04);
+}
+#bs-example-navbar-collapse-1 ul li a:hover
+{
+     border-radius:5px 5px 0 0;
+    color: #fff;
+    background: #019f52;
+   font-size:17px;
+}
+#bs-example-navbar-collapse-1 ul li ul li a:hover
+{
+    color: #fff;
+    background: #17b23d;
+    border-radius:5px;
+    transform: scale(1.01,1.01);
+    -webkit-transform: scale(1.01,1.01);
+    -moz-transform: scale(1.01,1.01);
+    -o-transform: scale(1.01,1.01);
+    -ms-transform: scale(1.01,1.01);
+}
+.navbar-default .container-fluid
+{
+    border-bottom: 6px solid #019f52;
+}
+/*khung css cho header*/
+.contact
+{
+    margin-top:21px;
+    }
+.border-content
+{
+    border-bottom: 6px solid #15954a;
+}
+.image-logo-left
+{
+    padding-left: 0px;
+}
+.wrapper .header .logo_left
+{
+    background: url("../Img/logo_left.jpg") no-repeat;
+    height: 94px;
+}
+
+/*.contact-content
+{
+    margin-right: 0;
+}*/
+
+.logo_right
+{
+    height: 38px;
+    padding: 0px;
+}
+
+.language
+{    
+    height: 35px;
+    width: 8.667% !important;
+    padding-right: 32px !important;
+}
+
+.phone
+{
+    font-weight: bold;
+    line-height: 36px;
+    padding: 0px;
+    white-space: nowrap;
+}
+
+
+/*-------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-family: Arial, 'Arvo' , 'Helvetica Neue' , Helvetica, sans-serif;
+    font-weight: normal;
+    text-rendering: optimizelegibility;
+    color: #019f52;
+}
+
+h1
+{
+    color: #4E443C;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
+a
+{
+    color: #018a44;
+}
+
+pre
+{
+    border: 1px solid #000;
+    overflow-x: auto;
+    background: #222;
+    color: #fff;
+    text-shadow: none;
+}
+
+.wrapper
+{
+    max-width: 1020px;
+    padding: 0 20px;
+    margin: auto;
+}
+/*khung style cho main*/
+.main-content
+{
+    padding-right: 33px;
+}
+.text-body
+{
+    text-align: justify;
+}
+.navigater
+{
+    color: #018a44;
+    border-bottom: 2px solid #018a44;
+    text-transform: uppercase;
+}
+.text-sidebar
+{
+    text-align: justify;
+    width: 87.667% !important;
+    padding: 0;
+}
+.sidebar-body
+{
+    text-align: justify;
+    border-bottom: 1px dotted #d1d1d1;
+}
+.icon-sidebar
+{
+    background: url("../Img/icon-sidebar.jpg") no-repeat;
+    height: 22px;
+}
+.main-category
+{
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #d1d1d1;
+    margin-bottom: 10px;
+}
+.main-sidebar
+{
+    padding-left: 15px;
+}
+/*-----*/
+/*style cho footer*/
+.footer .title
+{
+    color: #082daf;
+    font-size: 13px;
+    font-weight: bold;
+}
+.footer .title a
+{
+    color: #082daf;
+}
+.footer .content
+{
+    color: #018a44;
+    font-size: 13px;
+}
+
+.footer .picture
+{
+    background: url("../Img/tracuu_tructuyen.jpg") no-repeat;
+    height: 78px;
+}
+
+.f-colum .title
+{
+    font-size: 12px;
+}
+/*-----------*/
+
+.albums_frame {
+    background-image: url("../Img/albums_frame1.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 247px;
+    width: 290px;
+}
+
+.albums_frame .img_albums {
+    border: 0 none;
+    height: 210px;
+    margin-left: -12px;
+    padding-top: 35px;
+    width: 234px;
+}
+
+.video_frame1 {
+    background-image: url("../img/video_frame3.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 156px;
+    width: 190px;
+}
+.video_frame1 .img_video {
+    border: 0 none;
+    height: 132px;
+    margin-left: 2px;
+    padding-top: 58px;
+    width: 132px;
+}
+/*style cho menu*/
+.nav li:hover .dropdown-menu {
+    display: block;
+    visibility: visible;
+    margin-top: -1px;
+}

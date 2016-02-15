@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebMedi.Site" %>
+
+<%@ Register Src="Client/Header.ascx" TagName="Header" TagPrefix="pnHeader" %>
+<%@ Register Src="Client/Footer.ascx" TagName="Footer" TagPrefix="pnFooter" %>
+<%@ Register Src="Client/Modules/Panel/BlockPopup.ascx" TagName="BlockPopup" TagPrefix="panelBlockPopup" %>
+<%@ Register Src="Client/MenuTop.ascx" TagName="MenuTop" TagPrefix="pnMenuTop" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Delhi-svg-map : " />
+    <title></title>
+    <link rel="shortcut icon" href="Img/favicon.ico" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--chèn bootstrap-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <!-- Shared assets -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!-- Example assets -->
+    <link rel="stylesheet" type="text/css" href="/css/jcarousel/jcarousel.responsive.css" />
+    
+   
+    <link rel="stylesheet" href="/css/jvector/css/jqvmap.css"/>
+    
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jcarousel/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="/js/jcarousel/jcarousel.responsive.js"></script>
+    <script src="/js/bootstrap.js" type="text/javascript"></script>
+
+
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="/css/jvector/js/jquery.vmap.js" type="text/javascript"></script>
+    <script src="/css/jvector/js/jquery.vmap.delhi.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        function newwindow(str) {
+            window.open(str, 'jav', 'width=800,height=700,resizable=yes');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form id="form1" runat="server">
+        <div class="wrapper">
+            <pnHeader:Header ID="Header1" runat="server" />
+            <pnMenuTop:MenuTop ID="MenuTop1" runat="server" />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <pnFooter:Footer ID="Footer1" runat="server" />
+        </div>
+        <div id="light" class="white_content" style="display: none;">
+            <panelBlockPopup:BlockPopup ID="BlockPopup1" runat="server" />
+            <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">
+                <img src="<%=ResolveUrl("~/")%>images/closelabel.gif" style="border-width: 0px;" />
+            </a>
+        </div>
+        </form>
+    </div>
+
+</body>
+</html>

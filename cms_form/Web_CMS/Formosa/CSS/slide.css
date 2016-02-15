@@ -1,0 +1,81 @@
+﻿#slider {
+    width: 400px; /* important to be same as image width */
+    height: 285px; /* important to be same as image height */
+    position: relative; /* important */
+	overflow: hidden; /* important */
+}
+
+
+#sliderContent {
+    width: 90px;
+	margin-left:0px;
+	margin-top:0px;
+}
+
+
+.sliderImage {
+    float: right;
+    position: relative;
+	display: none;
+}
+
+.sliderImage span {
+    position: absolute;
+    padding: 5px 5px;
+    width: 379px;
+    background-color: #6b6c5a;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+	-khtml-opacity: 0.7;
+    opacity: 0.7;
+    color: #ffffff;
+    display: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.top {
+	top: 0;
+	left: 0;
+}
+.bottom {
+	bottom: 0;
+    left: 0;
+    margin-bottom:0px;
+    margin-top:5px;
+}
+.left {
+	top: 0;
+    left: 0;
+	width: 110px !important;
+	height: 161px;
+}
+.right {
+	right: 0;
+	bottom: 0;
+	width: 130px !important;
+	height: 161px;
+	margin-right:10px;
+}
+
+
+.cssTitle
+{
+	font-size:12px;
+	line-height:normal;
+}
+
+
+.cssTitle a
+{
+	text-decoration:none;
+	color:#ffffff;
+}
+
+.cssTitle a:hover
+{
+	text-decoration:none;
+	color:#ffff00;
+}

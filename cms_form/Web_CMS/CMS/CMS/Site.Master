@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CMS.SiteMaster" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Src="~/Client/Admin/Footer.ascx" TagName="Footer" TagPrefix="panelFooter" %>
+<%@ Register Src="Client/Admin/Header.ascx" TagName="Header" TagPrefix="panelHeader" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head  id="Head1" runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CMS Website</title>
+    <link href="Styles/style_admin.css" rel="stylesheet" type="text/css" />
+    <link href="Images/Admin_Theme/Styles/style.css" rel="stylesheet" type="text/css" />
+    <link href="Images/Admin_Theme/Styles/style1.css" rel="stylesheet" type="text/css" />
+    <link href="Images/Admin_Theme/Styles/Style_Question.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/StyleSheetGrid.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="cssNLDC_admin">
+    <form runat="server" id="form1">
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+    </telerik:RadScriptManager>
+    <div id="container">
+        <div id="header">
+            <!-- is FrontPage -->
+            <panelheader:header runat="server" />
+        </div>
+        <!-- end header -->
+        <div id="mainContent">
+            <div id="sidebar">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderHomepage" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- end sidebar1 -->
+        </div>
+        <!-- end bodyMainContent -->
+        <div id="footer">
+            <panelfooter:footer id="footer1" runat="server" />
+        </div>
+        <!-- end footer -->
+    </div>
+    <!-- end container -->
+    </form>
+</body>
+</html>

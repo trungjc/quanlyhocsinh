@@ -1,0 +1,10 @@
+E:\ES\project\CMS_Core\Web_CMS\BSO\bin\Debug\BSO.dll
+E:\ES\project\CMS_Core\Web_CMS\BSO\bin\Debug\BSO.pdb
+E:\ES\project\CMS_Core\Web_CMS\BSO\bin\Debug\DAO.dll
+E:\ES\project\CMS_Core\Web_CMS\BSO\bin\Debug\ETO.dll
+E:\ES\project\CMS_Core\Web_CMS\BSO\bin\Debug\Telerik.Web.UI.dll
+E:\ES\project\CMS_Core\Web_CMS\BSO\bin\Debug\DAO.pdb
+E:\ES\project\CMS_Core\Web_CMS\BSO\bin\Debug\ETO.pdb
+E:\ES\project\CMS_Core\Web_CMS\BSO\obj\x86\Debug\BSO.csprojResolveAssemblyReference.cache
+E:\ES\project\CMS_Core\Web_CMS\BSO\obj\x86\Debug\BSO.dll
+E:\ES\project\CMS_Core\Web_CMS\BSO\obj\x86\Debug\BSO.pdb

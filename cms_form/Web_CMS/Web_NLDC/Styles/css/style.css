@@ -1,0 +1,534 @@
+﻿h3
+{
+    font-size: 20px;
+}
+.container
+{
+    max-width: 1060px;
+}
+a
+{
+    color: #272727;
+}
+img:hover
+{
+    transform: scale(1.04,1.04);
+}
+.librari-img a div:hover
+{
+    transform: scale(1.04,1.04);
+}
+a:hover, a:focus
+{
+    text-decoration: none !important;
+    color: #bd1100;
+}
+/*style cho header*/
+.header
+{
+    background: url('../img/header.jpg') repeat-x;
+    background-size: 100% 100%;
+    min-height: 135px;
+}
+.header-menu
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #b6c7db;
+}
+.header-menu div
+{
+    padding-right: 0px !important;
+    padding-left: 10px;
+    border-right: 1px #b6c7db solid;
+    line-height: 15px;
+    width: 16.4% !important;
+}
+.header-menu div a
+{
+    color: #b6d7db;
+}
+.header-menu div a:hover
+{
+    font-weight: bold;
+}
+.header-menu-dangnhap
+{
+    border-right: 0px #003362 solid !important;
+}
+/* style cho menu*/
+.menu
+{
+    background: #008ed0;
+    min-height: 40px;
+}
+.menu-content
+{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.navbar
+{
+    margin-bottom: 0px !important;
+    min-height: 40px !important;
+}
+.navbar-nav > li:first-child
+{
+    border-left: 1px #c6d7db solid;
+}
+.navbar-nav > li > a
+{
+    color: #fff !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    line-height: 40px;
+    border-right: 1px #c6d7db solid;
+}
+.navbar
+{
+    border: none !important;
+}
+.navbar-nav > li
+{
+    min-width: 206px !important;
+    text-align: center !important;
+    text-transform: uppercase;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus
+{
+    background: #46acdc !important;
+    font-weight: bold;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus
+{
+    background-color: #46acdc;
+    color: #c6d7db;
+}
+.dropdown-menu
+{
+    border: none !important;
+    text-align: center !important;
+    min-width: 14.7em !important;
+    background: #008ed0;
+}
+.dropdown-menu > li > a
+{
+    line-height: 2 !important;
+    text-transform: none;
+    color: #fff;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus
+{
+    color: #fff;
+    font-weight: bold;
+    background-color: #46acdc;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a
+{
+    line-height: 2 !important;
+    text-transform: none;
+    color: #fff;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus
+{
+    color: #fff;
+    font-weight: bold;
+    background-color: #46acdc;
+}
+/*style cho slider */
+#caption
+{
+    position: absolute;
+    top: 200px;
+    left: 70px;
+    background-color: #07192D;
+    opacity: 0.7;
+    color: #fff;
+    height: auto;
+    max-width: 316px;
+    font-size: 22px;
+    padding: 12px 15px;
+    font-style: italic;
+}
+
+.jssorb21 div, .jssorb21 div:hover, .jssorb21 .av
+{
+    background: url(../img/b21.png) no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.jssorb21 div
+{
+    background-position: -5px -5px;
+}
+
+.jssorb21 div:hover, .jssorb21 .av:hover
+{
+    background-position: -35px -5px;
+}
+
+.jssorb21 .av
+{
+    background-position: -65px -5px;
+}
+
+.jssorb21 .dn, .jssorb21 .dn:hover
+{
+    background-position: -95px -5px;
+}
+.jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn
+{
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    background: url(../img/a21.png) center center no-repeat;
+    overflow: hidden;
+}
+
+.jssora21l
+{
+    background-position: -3px -33px;
+}
+
+.jssora21r
+{
+    background-position: -63px -33px;
+}
+
+.jssora21l:hover
+{
+    background-position: -123px -33px;
+}
+
+.jssora21r:hover
+{
+    background-position: -183px -33px;
+}
+
+.jssora21ldn
+{
+    background-position: -243px -33px;
+}
+
+.jssora21rdn
+{
+    background-position: -303px -33px;
+}
+/*style cho phần content*/
+/*style padding cho toàn trang*/
+.news-content div, .links h3 a, .links-item, .categories-item div, .categories-mangluoi div, .introduce div, .slide-news > div, #side-bar-right > div
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.news-title h3 a
+{
+    color: #272727;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.news-title h3 a:hover, .news-title h3 a:focus
+{
+    color: #bd1100;
+}
+.news-description
+{
+    padding-top: 10px;
+    text-align: justify;
+}
+.links-item h3 a span
+{
+    padding-left: 20px;
+    color: #272727;
+}
+.links-item h3 a span:hover, .links-item h3 a span:focus
+{
+    color: #bd1100;
+}
+/*---------------------*/
+.categories-title h4
+{
+    background: #052c67;
+    line-height: 2.4em;
+    color: #fff;
+    padding-left: 15px;
+}
+.categories-item .categories-content
+{
+    padding-bottom: 10px;
+}
+
+.categories-img
+{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.categories-text
+{
+    padding-right: 0px !important;
+    color: #333;
+}
+.library-video
+{
+    padding: 0px !important;
+}
+
+.librari-img
+{
+    padding-left: 5px !important;
+    padding-right: 0 !important;
+    padding-bottom: 5px;
+}
+.list-image-library .librari-img:first-child
+{
+    padding-left: 0px !important;
+}
+.vector-map
+{
+    border: 1px #0a1362 solid;
+    min-height: 563px;
+}
+
+.introduce-title h4
+{
+    background: #45ade0;
+    line-height: 2.4em;
+    text-transform: uppercase;
+    padding-left: 15px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 2px !important;
+}
+.gioithieu
+{
+    background: #45ade0;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+.list-introduce ul
+{
+    padding-left: 0px !important;
+    margin: 0 20px 0 30px;
+}
+.list-introduce ul li:first-child
+{
+    border-top: none;
+}
+.list-introduce ul li
+{
+    line-height: 2.8em;
+    padding-left: 10px;
+    color: #fff;
+    border-top: 1px #b6c7db solid;
+}
+.slide-news
+{
+    margin-top: 10px;
+    max-height: 275px;
+}
+/*style cho footter*/
+.footter
+{
+    background: url('../img/background-footter.jpg') repeat-x;
+    background-size: 100% 100%;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.list-new-footter ul li
+{
+    line-height: 24px;
+}
+.list-new-footter ul li a
+{
+    color: #000;
+}
+.list-new-footter ul li a:hover, .list-new-footter ul li a:focus
+{
+    color: #bd1100;
+}
+.footter-content div span
+{
+    margin-left: 5px;
+}
+.ThongTuWeb
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #041330;
+    text-align: center;
+    color: #fff;
+}
+
+#dvMap div
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#dvMap
+{
+    border: none !important;
+}
+
+@media (max-width:600px)
+{
+
+}
+
+@media (max-width: 1200px)
+{
+    .navbar-header
+    {
+        float: none;
+    }
+    .navbar-toggle
+    {
+        display: block;
+    }
+    .navbar-collapse
+    {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse
+    {
+        display: none !important;
+    }
+    .navbar-nav
+    {
+        float: none !important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav > li
+    {
+        float: none;
+    }
+    .navbar-nav > li > a
+    {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-nav > li > a
+    {
+        color: #fff !important;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+        line-height: 40px;
+        border-right: none;
+    }
+
+    .navbar-nav > li:first-child
+    {
+        border-left: none;
+    }
+}
+/*style cho trang danh sách*/
+.cate-content
+{
+    padding-bottom: 30px;
+}
+#side-bar-right .links-item h3 a span
+{
+    font-size: 15px;
+    font-weight: bold;
+}
+#side-bar-right .links-item h3 a span:hover
+{
+    font-size: 17px;
+}
+#side-bar-right .links-item
+{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-top: 1px #bcbcbc solid;
+}
+#side-bar-right .categories-title h4
+{
+    margin-bottom: 0px;
+}
+#side-bar-right .links-item h3
+{
+    margin-top: 10px !important;
+}
+#side-bar-right .categories-title
+{
+    margin-top: 15px;
+}
+#side-bar-right .categories-title:first-child
+{
+    margin-top: 0px !important;
+}
+.glyphicon
+{
+    padding-left: 0px !important;
+    margin-right: 10px;
+}
+#side-bar-right .sidebar-category
+{
+    margin-left: 0px;
+    margin-right: 0px;
+    line-height: 40px;
+    color: #272727;
+}
+#side-bar-right a .sidebar-category:hover
+{
+    background: #46acdc;
+    padding-left: 15px;
+    font-weight: bold;
+    color: #fff;
+}
+#category-left
+{
+    padding-top: 10px;
+}
+#category-left > div
+{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 15px;
+}
+.category-navication
+{
+    line-height: 28px;
+    border-bottom: 1px #bcbcbc solid;
+}
+.category-navication span a
+{
+    color: #272727;
+    font-weight: bold;
+}
+.category-navication span a:hover
+{
+    color: #bd1100;
+}
+.cate-image
+{
+    padding-left: 0px !important;
+}
+.cate-date
+{
+    font-size: 12px;
+    color: #818181;
+}
+.cate-description
+{
+    text-align: justify;
+    margin-top: 10px;
+}
+.cate-title h3, .cate-title h4
+{
+    margin-top: 0px;
+    text-align: justify;
+}
+.category-news-hot
+{
+    padding-bottom: 15px !important;
+    border-bottom: 1px #bcbcbc dotted;
+}
+.categories-item {min-height: 340px;}

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.377</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2678B020-C769-4033-92C5-C3D5A999C5D4}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyName>DAO</AssemblyName>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="DAO\Medi_LoaiXNDAO.cs" />
+    <Compile Include="DAO\Medi_PhieuXetNghiemDAO.cs" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="DAO\LichTuanDAO.cs" />
+    <Compile Include="DAO\Medi_QuanLyDoiTuong.cs" />
+    <Compile Include="DAO\NewsActiveDAO.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="DAO\BaseDAO.cs" />
+    <Compile Include="DAO\RolesDAO.cs" />
+    <Compile Include="DAO\PictureDAO.cs" />
+    <Compile Include="DAO\EmailDAO.cs" />
+    <Compile Include="DAO\PermissionDAO.cs" />
+    <Compile Include="DAO\AdminRolesDAO.cs" />
+    <Compile Include="DAO\ContactDAO.cs" />
+    <Compile Include="DAO\ProductCommentDAO.cs" />
+    <Compile Include="DAO\MenuLinksDAO.cs" />
+    <Compile Include="DAO\CateNewsGroupDAO.cs" />
+    <Compile Include="DAO\AlbumDAO.cs" />
+    <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="DAO\PhoneBookDAO.cs" />
+    <Compile Include="DAO\Chart24hDAO.cs" />
+    <Compile Include="DAO\NewsDAO.cs" />
+    <Compile Include="DAO\MemberDAO.cs" />
+    <Compile Include="DAO\LinkDAO.cs" />
+    <Compile Include="DAO\CompanyDAO.cs" />
+    <Compile Include="DAO\AdminDAO.cs" />
+    <Compile Include="DAO\VideoDAO.cs" />
+    <Compile Include="DAO\SinglePageDAO.cs" />
+    <Compile Include="DAO\ModulesDAO.cs" />
+    <Compile Include="DAO\DownloadDAO.cs" />
+    <Compile Include="DAO\PageCommentDAO.cs" />
+    <Compile Include="DAO\OrderDAO.cs" />
+    <Compile Include="DAO\ChartRoundDAO.cs" />
+    <Compile Include="DAO\AlbumsCateDAO.cs" />
+    <Compile Include="DAO\OrderDetailDAO.cs" />
+    <Compile Include="DAO\FaqDAO.cs" />
+    <Compile Include="DAO\DataAccessException.cs" />
+    <Compile Include="DAO\ModulesFrontPanelDAO.cs" />
+    <Compile Include="DAO\AlbumsDAO.cs" />
+    <Compile Include="DAO\RSSDAO.cs" />
+    <Compile Include="DAO\PagesDAO.cs" />
+    <Compile Include="DAO\OfficialDAO.cs" />
+    <Compile Include="DAO\NewsCommentDAO.cs" />
+    <Compile Include="DAO\BookDAO.cs" />
+    <Compile Include="DAO\NewsGroupDAO.cs" />
+    <Compile Include="DAO\AnnounceDAO.cs" />
+    <Compile Include="DAO\RelationDAO.cs" />
+    <Compile Include="DAO\ConfigDAO.cs" />
+    <Compile Include="DAO\CateNewsPermissionDAO.cs" />
+    <Compile Include="DAO\OfficialFileDAO.cs" />
+    <Compile Include="DAO\ListQuestionDAO.cs" />
+    <Compile Include="DAO\HitCounterDAO.cs" />
+    <Compile Include="DAO\CateNewsDAO.cs" />
+    <Compile Include="DAO\AdvDAO.cs" />
+    <Compile Include="DAO\CateProductDAO.cs" />
+    <Compile Include="DAO\CartInfoDAO.cs" />
+    <Compile Include="DAO\BrandDAO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ETO\ETO.csproj">
+      <Project>{F8EB62FE-6C30-4BA8-ACF5-8A5ABA9BED64}</Project>
+      <Name>ETO</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

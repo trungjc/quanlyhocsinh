@@ -1,0 +1,5 @@
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Utilities\bin\Debug\IEE.Utilities.dll
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Utilities\bin\Debug\IEE.Utilities.pdb
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Utilities\obj\Debug\IEE.Utilities.dll
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Utilities\obj\Debug\IEE.Utilities.pdb
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Utilities\obj\Debug\IEE.Utilities.csprojResolveAssemblyReference.cache

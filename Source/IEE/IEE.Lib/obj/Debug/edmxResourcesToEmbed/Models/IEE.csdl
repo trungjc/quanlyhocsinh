@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IEE_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetRoleInGroupUsers" Relationship="IEE_Model.FK_AspNetRoleInGroupUser_AspNetRoles" FromRole="AspNetRole" ToRole="AspNetRoleInGroupUser" />
+    <NavigationProperty Name="SysRoleInFunctions" Relationship="IEE_Model.FK_SysRoleInFunction_AspNetRoles" FromRole="AspNetRole" ToRole="SysRoleInFunction" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TypeUser" Type="Int32" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserType" Relationship="Self.FK_AspNetUsers_AspNetUserType" FromRole="AspNetUsers" ToRole="AspNetUserType" />
+    <NavigationProperty Name="AspNetUserInGroups" Relationship="IEE_Model.FK_AspNetUserInGroup_AspNetUsers" FromRole="AspNetUser" ToRole="AspNetUserInGroup" />
+  </EntityType>
+  <EntityType Name="AspNetUserType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUsers_AspNetUserType" FromRole="AspNetUserType" ToRole="AspNetUsers" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUsers_AspNetUserType">
+    <End Role="AspNetUserType" Type="Self.AspNetUserType" Multiplicity="0..1" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUserType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUsers">
+        <PropertyRef Name="TypeUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IEE_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="AspNetUserTypes" EntityType="Self.AspNetUserType" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUsers_AspNetUserType" Association="Self.FK_AspNetUsers_AspNetUserType">
+      <End Role="AspNetUserType" EntitySet="AspNetUserTypes" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <EntitySet Name="AspNetGroupUsers" EntityType="IEE_Model.AspNetGroupUser" />
+    <EntitySet Name="AspNetRoleInGroupUsers" EntityType="IEE_Model.AspNetRoleInGroupUser" />
+    <EntitySet Name="AspNetUserInGroups" EntityType="IEE_Model.AspNetUserInGroup" />
+    <EntitySet Name="SysFunctions" EntityType="IEE_Model.SysFunction" />
+    <EntitySet Name="SysRoleInFunctions" EntityType="IEE_Model.SysRoleInFunction" />
+    <AssociationSet Name="FK_AspNetRoleInGroupUser_AspNetGroupUsers" Association="IEE_Model.FK_AspNetRoleInGroupUser_AspNetGroupUsers">
+      <End Role="AspNetGroupUser" EntitySet="AspNetGroupUsers" />
+      <End Role="AspNetRoleInGroupUser" EntitySet="AspNetRoleInGroupUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserInGroup_AspNetGroupUsers" Association="IEE_Model.FK_AspNetUserInGroup_AspNetGroupUsers">
+      <End Role="AspNetGroupUser" EntitySet="AspNetGroupUsers" />
+      <End Role="AspNetUserInGroup" EntitySet="AspNetUserInGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetRoleInGroupUser_AspNetRoles" Association="IEE_Model.FK_AspNetRoleInGroupUser_AspNetRoles">
+      <End Role="AspNetRole" EntitySet="AspNetRoles" />
+      <End Role="AspNetRoleInGroupUser" EntitySet="AspNetRoleInGroupUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SysRoleInFunction_AspNetRoles" Association="IEE_Model.FK_SysRoleInFunction_AspNetRoles">
+      <End Role="AspNetRole" EntitySet="AspNetRoles" />
+      <End Role="SysRoleInFunction" EntitySet="SysRoleInFunctions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserInGroup_AspNetUsers" Association="IEE_Model.FK_AspNetUserInGroup_AspNetUsers">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserInGroup" EntitySet="AspNetUserInGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SysRoleInFunction_SysFunctions" Association="IEE_Model.FK_SysRoleInFunction_SysFunctions">
+      <End Role="SysFunction" EntitySet="SysFunctions" />
+      <End Role="SysRoleInFunction" EntitySet="SysRoleInFunctions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AspNetGroupUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Descriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="AspNetRoleInGroupUsers" Relationship="IEE_Model.FK_AspNetRoleInGroupUser_AspNetGroupUsers" FromRole="AspNetGroupUser" ToRole="AspNetRoleInGroupUser" />
+    <NavigationProperty Name="AspNetUserInGroups" Relationship="IEE_Model.FK_AspNetUserInGroup_AspNetGroupUsers" FromRole="AspNetGroupUser" ToRole="AspNetUserInGroup" />
+  </EntityType>
+  <EntityType Name="AspNetRoleInGroupUser">
+    <Key>
+      <PropertyRef Name="GroupId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="AspNetGroupUser" Relationship="IEE_Model.FK_AspNetRoleInGroupUser_AspNetGroupUsers" FromRole="AspNetRoleInGroupUser" ToRole="AspNetGroupUser" />
+    <NavigationProperty Name="AspNetRole" Relationship="IEE_Model.FK_AspNetRoleInGroupUser_AspNetRoles" FromRole="AspNetRoleInGroupUser" ToRole="AspNetRole" />
+  </EntityType>
+  <EntityType Name="AspNetUserInGroup">
+    <Key>
+      <PropertyRef Name="GroupId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="AspNetGroupUser" Relationship="IEE_Model.FK_AspNetUserInGroup_AspNetGroupUsers" FromRole="AspNetUserInGroup" ToRole="AspNetGroupUser" />
+    <NavigationProperty Name="AspNetUser" Relationship="IEE_Model.FK_AspNetUserInGroup_AspNetUsers" FromRole="AspNetUserInGroup" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="SysFunction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Controllers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Actions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="SysRoleInFunctions" Relationship="IEE_Model.FK_SysRoleInFunction_SysFunctions" FromRole="SysFunction" ToRole="SysRoleInFunction" />
+  </EntityType>
+  <EntityType Name="SysRoleInFunction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FunctionId" Type="Int32" />
+    <Property Name="RoleId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="AspNetRole" Relationship="IEE_Model.FK_SysRoleInFunction_AspNetRoles" FromRole="SysRoleInFunction" ToRole="AspNetRole" />
+    <NavigationProperty Name="SysFunction" Relationship="IEE_Model.FK_SysRoleInFunction_SysFunctions" FromRole="SysRoleInFunction" ToRole="SysFunction" />
+  </EntityType>
+  <Association Name="FK_AspNetRoleInGroupUser_AspNetGroupUsers">
+    <End Type="IEE_Model.AspNetGroupUser" Role="AspNetGroupUser" Multiplicity="1" />
+    <End Type="IEE_Model.AspNetRoleInGroupUser" Role="AspNetRoleInGroupUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetGroupUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetRoleInGroupUser">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserInGroup_AspNetGroupUsers">
+    <End Type="IEE_Model.AspNetGroupUser" Role="AspNetGroupUser" Multiplicity="1" />
+    <End Type="IEE_Model.AspNetUserInGroup" Role="AspNetUserInGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetGroupUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserInGroup">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetRoleInGroupUser_AspNetRoles">
+    <End Type="IEE_Model.AspNetRole" Role="AspNetRole" Multiplicity="1" />
+    <End Type="IEE_Model.AspNetRoleInGroupUser" Role="AspNetRoleInGroupUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetRoleInGroupUser">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SysRoleInFunction_AspNetRoles">
+    <End Type="IEE_Model.AspNetRole" Role="AspNetRole" Multiplicity="0..1" />
+    <End Type="IEE_Model.SysRoleInFunction" Role="SysRoleInFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SysRoleInFunction">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserInGroup_AspNetUsers">
+    <End Type="IEE_Model.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+    <End Type="IEE_Model.AspNetUserInGroup" Role="AspNetUserInGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserInGroup">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SysRoleInFunction_SysFunctions">
+    <End Type="IEE_Model.SysFunction" Role="SysFunction" Multiplicity="0..1" />
+    <End Type="IEE_Model.SysRoleInFunction" Role="SysRoleInFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysFunction">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SysRoleInFunction">
+        <PropertyRef Name="FunctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,10 @@
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\IEE.Lib.dll.config
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\IEE.Lib.dll
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\IEE.Lib.pdb
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\EntityFramework.dll
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\EntityFramework.SqlServer.dll
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\EntityFramework.xml
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\EntityFramework.SqlServer.xml
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\obj\Debug\IEE.Lib.csprojResolveAssemblyReference.cache
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\obj\Debug\IEE.Lib.dll
+F:\Project\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\obj\Debug\IEE.Lib.pdb

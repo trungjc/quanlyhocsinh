@@ -164,6 +164,8 @@ namespace IEE.Web.Controllers
                 user.SkypeID = model.SkypeID;
                 user.Gender = model.Gender;
                 user.CompanyName = model.CompanyName;
+                user.Address = model.Address;
+                user.IsLocked = false;
 
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -212,7 +214,8 @@ namespace IEE.Web.Controllers
                     user.EmailConfirmed = true;
                     await UserManager.UpdateAsync(user);
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                    return RedirectToAction("Index", "Home", new { ConfirmedEmail = user.Email });
+                    //return RedirectToAction("Index", "Home", new { ConfirmedEmail = user.Email });
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

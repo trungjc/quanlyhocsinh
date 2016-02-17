@@ -158,6 +158,13 @@ namespace IEE.Web.Controllers
                 var user = new ApplicationUser() { UserName = model.UserName };
                 user.Email = model.Email;
                 user.EmailConfirmed = false;
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.FullName = string.Format("{0} {1}", model.FirstName, model.LastName);
+                user.SkypeID = model.SkypeID;
+                user.Gender = model.Gender;
+                user.CompanyName = model.CompanyName;
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

@@ -19,6 +19,8 @@ namespace IEE.Lib.Models
         {
             this.AspNetUserClaims = new HashSet<AspNetUserClaim>();
             this.AspNetUserInGroups = new HashSet<AspNetUserInGroup>();
+            this.AspNetUserLogins = new HashSet<AspNetUserLogin>();
+            this.AspNetRoles = new HashSet<AspNetRole>();
         }
     
         public string Id { get; set; }
@@ -34,11 +36,26 @@ namespace IEE.Lib.Models
         public int AccessFailedCount { get; set; }
         public string UserName { get; set; }
         public Nullable<int> TypeUser { get; set; }
+        public string FullName { get; set; }
+        public string FirstName { get; set; }
+        public string SkypeID { get; set; }
+        public string Address { get; set; }
+        public string ResponsibilityID { get; set; }
+        public Nullable<bool> IsLocked { get; set; }
+        public Nullable<System.DateTime> LastConnection { get; set; }
+        public Nullable<bool> Gender { get; set; }
+        public string CompanyName { get; set; }
+        public Nullable<int> DepartmentID { get; set; }
+        public string LastName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual AspNetUserType AspNetUserType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserInGroup> AspNetUserInGroups { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
     }
 }

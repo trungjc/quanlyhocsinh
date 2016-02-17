@@ -19,6 +19,7 @@ namespace IEE.Lib.Models
         {
             this.AspNetRoleInGroupUsers = new HashSet<AspNetRoleInGroupUser>();
             this.SysRoleInFunctions = new HashSet<SysRoleInFunction>();
+            this.AspNetUsers = new HashSet<AspNetUser>();
         }
     
         public string Id { get; set; }
@@ -28,5 +29,7 @@ namespace IEE.Lib.Models
         public virtual ICollection<AspNetRoleInGroupUser> AspNetRoleInGroupUsers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SysRoleInFunction> SysRoleInFunctions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
     }
 }

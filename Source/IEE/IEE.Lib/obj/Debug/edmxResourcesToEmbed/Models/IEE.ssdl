@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="IEE_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
   <EntityType Name="AspNetGroupUsers">
     <Key>
       <PropertyRef Name="Id" />
@@ -8,15 +18,6 @@
     <Property Name="Code" Type="nvarchar" MaxLength="50" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Descriptions" Type="nvarchar(max)" />
-    <Property Name="IsActive" Type="bit" />
-  </EntityType>
-  <EntityType Name="AspNetRoleInGroupUser">
-    <Key>
-      <PropertyRef Name="GroupId" />
-      <PropertyRef Name="RoleId" />
-    </Key>
-    <Property Name="GroupId" Type="int" Nullable="false" />
-    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="IsActive" Type="bit" />
   </EntityType>
   <EntityType Name="AspNetRoles">
@@ -44,6 +45,24 @@
     <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="IsActive" Type="bit" />
   </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
   <EntityType Name="AspNetUsers">
     <Key>
       <PropertyRef Name="Id" />
@@ -61,6 +80,17 @@
     <Property Name="AccessFailedCount" Type="int" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
     <Property Name="TypeUser" Type="int" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="150" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="150" />
+    <Property Name="SkypeID" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="ResponsibilityID" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsLocked" Type="bit" />
+    <Property Name="LastConnection" Type="datetime" />
+    <Property Name="Gender" Type="bit" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="200" />
+    <Property Name="DepartmentID" Type="int" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="AspNetUserType">
     <Key>
@@ -69,6 +99,16 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Code" Type="nchar" MaxLength="10" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="SysFunctions">
     <Key>
@@ -91,30 +131,6 @@
     <Property Name="RoleId" Type="nvarchar" MaxLength="128" />
     <Property Name="IsActive" Type="bit" />
   </EntityType>
-  <Association Name="FK_AspNetRoleInGroupUser_AspNetGroupUsers">
-    <End Role="AspNetGroupUsers" Type="Self.AspNetGroupUsers" Multiplicity="1" />
-    <End Role="AspNetRoleInGroupUser" Type="Self.AspNetRoleInGroupUser" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetGroupUsers">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetRoleInGroupUser">
-        <PropertyRef Name="GroupId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_AspNetRoleInGroupUser_AspNetRoles">
-    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1" />
-    <End Role="AspNetRoleInGroupUser" Type="Self.AspNetRoleInGroupUser" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetRoles">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetRoleInGroupUser">
-        <PropertyRef Name="RoleId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_AspNetUserInGroup_AspNetGroupUsers">
     <End Role="AspNetGroupUsers" Type="Self.AspNetGroupUsers" Multiplicity="1" />
     <End Role="AspNetUserInGroup" Type="Self.AspNetUserInGroup" Multiplicity="*" />
@@ -139,18 +155,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_AspNetUsers_AspNetUserType">
-    <End Role="AspNetUserType" Type="Self.AspNetUserType" Multiplicity="0..1" />
-    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetUserType">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetUsers">
-        <PropertyRef Name="TypeUser" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -161,6 +165,48 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
         <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
@@ -190,23 +236,18 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="IEE_ModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetGroupUsers" EntityType="Self.AspNetGroupUsers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="AspNetRoleInGroupUser" EntityType="Self.AspNetRoleInGroupUser" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUserInGroup" EntityType="Self.AspNetUserInGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUserType" EntityType="Self.AspNetUserType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SysFunctions" EntityType="Self.SysFunctions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SysRoleInFunction" EntityType="Self.SysRoleInFunction" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_AspNetRoleInGroupUser_AspNetGroupUsers" Association="Self.FK_AspNetRoleInGroupUser_AspNetGroupUsers">
-      <End Role="AspNetGroupUsers" EntitySet="AspNetGroupUsers" />
-      <End Role="AspNetRoleInGroupUser" EntitySet="AspNetRoleInGroupUser" />
-    </AssociationSet>
-    <AssociationSet Name="FK_AspNetRoleInGroupUser_AspNetRoles" Association="Self.FK_AspNetRoleInGroupUser_AspNetRoles">
-      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
-      <End Role="AspNetRoleInGroupUser" EntitySet="AspNetRoleInGroupUser" />
-    </AssociationSet>
     <AssociationSet Name="FK_AspNetUserInGroup_AspNetGroupUsers" Association="Self.FK_AspNetUserInGroup_AspNetGroupUsers">
       <End Role="AspNetGroupUsers" EntitySet="AspNetGroupUsers" />
       <End Role="AspNetUserInGroup" EntitySet="AspNetUserInGroup" />
@@ -215,13 +256,21 @@
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="AspNetUserInGroup" EntitySet="AspNetUserInGroup" />
     </AssociationSet>
-    <AssociationSet Name="FK_AspNetUsers_AspNetUserType" Association="Self.FK_AspNetUsers_AspNetUserType">
-      <End Role="AspNetUserType" EntitySet="AspNetUserType" />
-      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-    </AssociationSet>
     <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
     </AssociationSet>
     <AssociationSet Name="FK_SysRoleInFunction_AspNetRoles" Association="Self.FK_SysRoleInFunction_AspNetRoles">
       <End Role="AspNetRoles" EntitySet="AspNetRoles" />

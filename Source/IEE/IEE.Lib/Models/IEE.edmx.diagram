@@ -22,6 +22,11 @@
         <AssociationConnector Association="IEE_Model.FK_SysRoleInFunction_AspNetRoles" />
         <AssociationConnector Association="IEE_Model.FK_AspNetUserInGroup_AspNetUsers" />
         <AssociationConnector Association="IEE_Model.FK_SysRoleInFunction_SysFunctions" />
+        <EntityTypeShape EntityType="IEE_Model.C__MigrationHistory" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="IEE_Model.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="12.875" />
+        <EntityTypeShape EntityType="IEE_Model.sysdiagram" Width="1.5" PointX="9.375" PointY="0.75" />
+        <AssociationConnector Association="IEE_Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="IEE_Model.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -69,7 +69,13 @@
     <Compile Include="Models\AspNetUserInGroup.cs">
       <DependentUpon>IEE.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>IEE.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AspNetUserType.cs">
+      <DependentUpon>IEE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
       <DependentUpon>IEE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IEE.Context.cs">
@@ -86,6 +92,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IEE.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>IEE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SysFunction.cs">
       <DependentUpon>IEE.tt</DependentUpon>

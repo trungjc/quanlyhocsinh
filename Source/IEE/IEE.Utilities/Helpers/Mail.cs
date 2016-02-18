@@ -17,7 +17,7 @@ namespace IEE.Utilities.Helpers
                 SmtpClient client = new SmtpClient();
                 client.Host = "smtp.googlemail.com";
                 client.Port = 587;
-                client.UseDefaultCredentials = false;
+                client.UseDefaultCredentials = false;                
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 client.EnableSsl = true;
                 client.Credentials = new NetworkCredential("iee.contact105@gmail.com", "iee@12345");

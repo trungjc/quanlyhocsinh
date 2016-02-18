@@ -18,3 +18,13 @@ F:\Project\IEE\quanlyhocsinh\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\EntityFr
 F:\Project\IEE\quanlyhocsinh\quanlyhocsinh\Source\IEE\IEE.Lib\obj\Debug\IEE.Lib.csprojResolveAssemblyReference.cache
 F:\Project\IEE\quanlyhocsinh\quanlyhocsinh\Source\IEE\IEE.Lib\obj\Debug\IEE.Lib.dll
 F:\Project\IEE\quanlyhocsinh\quanlyhocsinh\Source\IEE\IEE.Lib\obj\Debug\IEE.Lib.pdb
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\IEE.Lib.dll.config
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\IEE.Lib.dll
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\IEE.Lib.pdb
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\EntityFramework.dll
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\EntityFramework.xml
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\obj\Debug\IEE.Lib.csprojResolveAssemblyReference.cache
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\obj\Debug\IEE.Lib.dll
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Lib\obj\Debug\IEE.Lib.pdb

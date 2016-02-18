@@ -8,3 +8,8 @@ F:\Project\IEE\quanlyhocsinh\quanlyhocsinh\Source\IEE\IEE.Utilities\bin\Debug\IE
 F:\Project\IEE\quanlyhocsinh\quanlyhocsinh\Source\IEE\IEE.Utilities\obj\Debug\IEE.Utilities.csprojResolveAssemblyReference.cache
 F:\Project\IEE\quanlyhocsinh\quanlyhocsinh\Source\IEE\IEE.Utilities\obj\Debug\IEE.Utilities.dll
 F:\Project\IEE\quanlyhocsinh\quanlyhocsinh\Source\IEE\IEE.Utilities\obj\Debug\IEE.Utilities.pdb
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Utilities\bin\Debug\IEE.Utilities.dll
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Utilities\bin\Debug\IEE.Utilities.pdb
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Utilities\obj\Debug\IEE.Utilities.csprojResolveAssemblyReference.cache
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Utilities\obj\Debug\IEE.Utilities.dll
+D:\Project\_net\IEE\quanlyhocsinh\Source\IEE\IEE.Utilities\obj\Debug\IEE.Utilities.pdb

@@ -8,3 +8,14 @@ TODO
 test.html
 *.log
 test.html
+Source/IEE/IEE.Web/bin/IEE.Lib.dll
+Source/IEE/IEE.Utilities/obj/Debug/IEE.Utilities.pdb
+Source/IEE/IEE.Web/bin/IEE.Lib.pdb
+Source/IEE/IEE.Web/bin/IEE.Lib.pdb
+Source/IEE/IEE.Web/bin/IEE.Web.pdb
+Source/IEE/IEE.Web/obj/Debug/IEE.Web.csprojResolveAssemblyReference.cache
+Source/IEE/IEE.Lib/bin/Debug/IEE.Lib.dll
+Source/IEE/IEE.Lib/obj/Debug/IEE.Lib.csprojResolveAssemblyReference.cache
+Source/IEE/IEE.Utilities/bin/Debug/IEE.Utilities.dll
+Source/IEE/IEE.Utilities/obj/Debug/IEE.Utilities.csprojResolveAssemblyReference.cache
+Source/IEE/IEE.Utilities/obj/Debug/IEE.Utilities.pdb

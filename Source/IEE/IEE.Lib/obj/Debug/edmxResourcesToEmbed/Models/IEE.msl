@@ -22,6 +22,7 @@
     <EntitySetMapping Name="AspNetUsers">
       <EntityTypeMapping TypeName="IEE_Model.AspNetUser">
         <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="DoB" ColumnName="DoB" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
           <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -139,5 +140,14 @@
         <ScalarProperty Name="Id" ColumnName="RoleId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="AspNetRoleInGroups">
+      <EntityTypeMapping TypeName="IEE_Model.AspNetRoleInGroup">
+        <MappingFragment StoreEntitySet="AspNetRoleInGroup">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

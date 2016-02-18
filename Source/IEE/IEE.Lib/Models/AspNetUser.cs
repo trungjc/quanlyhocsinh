@@ -47,6 +47,7 @@ namespace IEE.Lib.Models
         public string CompanyName { get; set; }
         public Nullable<int> DepartmentID { get; set; }
         public string LastName { get; set; }
+        public Nullable<System.DateTime> DoB { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }

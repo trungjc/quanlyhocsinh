@@ -57,7 +57,7 @@
     <Compile Include="Models\AspNetRole.cs">
       <DependentUpon>IEE.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AspNetRoleInGroupUser.cs">
+    <Compile Include="Models\AspNetRoleInGroup.cs">
       <DependentUpon>IEE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUser.cs">

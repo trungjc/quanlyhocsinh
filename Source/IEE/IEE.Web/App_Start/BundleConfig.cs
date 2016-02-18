@@ -23,9 +23,16 @@ namespace IEE.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                "~/Content/bootstrap.css",
+                "~/Content/site.css",              
+                "~/Content/dist/css/AdminLTE.min.css",
+                "~/Content/dist/css/skins/_all-skins.min.css",
+                "~/Content/plugins/iCheck/flat/blue.css",
+                "~/Content/plugins/datepicker/datepicker3.css",
+                "~/Content/plugins/daterangepicker/daterangepicker-bs3.css",
+                "~/Content/plugins/fullcalendar/fullcalendar.min.css"));
         }
     }
 }

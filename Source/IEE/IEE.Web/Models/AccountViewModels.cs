@@ -52,10 +52,10 @@ namespace IEE.Web.Models
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
-        [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        //[Required]
+        //[Display(Name = "Email")]
+        //[EmailAddress]
+        //public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

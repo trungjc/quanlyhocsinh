@@ -25,6 +25,15 @@
           <Property Name="Descriptions" Type="nvarchar(max)" />
           <Property Name="IsActive" Type="bit" />
         </EntityType>
+        <EntityType Name="AspNetRoleInGroup">
+          <Key>
+            <PropertyRef Name="GroupId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
             <PropertyRef Name="Id" />
@@ -96,6 +105,7 @@
           <Property Name="CompanyName" Type="nvarchar" MaxLength="200" />
           <Property Name="DepartmentID" Type="int" />
           <Property Name="LastName" Type="nvarchar" MaxLength="150" />
+          <Property Name="DoB" Type="datetime" />
         </EntityType>
         <EntityType Name="AspNetUserType">
           <Key>
@@ -136,6 +146,30 @@
           <Property Name="RoleId" Type="nvarchar" MaxLength="128" />
           <Property Name="IsActive" Type="bit" />
         </EntityType>
+        <Association Name="FK_AspNetRoleInGroup_AspNetGroupUsers">
+          <End Role="AspNetGroupUsers" Type="Self.AspNetGroupUsers" Multiplicity="1" />
+          <End Role="AspNetRoleInGroup" Type="Self.AspNetRoleInGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetGroupUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRoleInGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetRoleInGroup_AspNetRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1" />
+          <End Role="AspNetRoleInGroup" Type="Self.AspNetRoleInGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRoleInGroup">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_AspNetUserInGroup_AspNetGroupUsers">
           <End Role="AspNetGroupUsers" Type="Self.AspNetGroupUsers" Multiplicity="1" />
           <End Role="AspNetUserInGroup" Type="Self.AspNetUserInGroup" Multiplicity="*" />
@@ -243,6 +277,7 @@
         <EntityContainer Name="IEE_ModelStoreContainer">
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetGroupUsers" EntityType="Self.AspNetGroupUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoleInGroup" EntityType="Self.AspNetRoleInGroup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserInGroup" EntityType="Self.AspNetUserInGroup" Schema="dbo" store:Type="Tables" />
@@ -253,6 +288,14 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SysFunctions" EntityType="Self.SysFunctions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SysRoleInFunction" EntityType="Self.SysRoleInFunction" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AspNetRoleInGroup_AspNetGroupUsers" Association="Self.FK_AspNetRoleInGroup_AspNetGroupUsers">
+            <End Role="AspNetGroupUsers" EntitySet="AspNetGroupUsers" />
+            <End Role="AspNetRoleInGroup" EntitySet="AspNetRoleInGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetRoleInGroup_AspNetRoles" Association="Self.FK_AspNetRoleInGroup_AspNetRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetRoleInGroup" EntitySet="AspNetRoleInGroup" />
+          </AssociationSet>
           <AssociationSet Name="FK_AspNetUserInGroup_AspNetGroupUsers" Association="Self.FK_AspNetUserInGroup_AspNetGroupUsers">
             <End Role="AspNetGroupUsers" EntitySet="AspNetGroupUsers" />
             <End Role="AspNetUserInGroup" EntitySet="AspNetUserInGroup" />
@@ -296,9 +339,9 @@
           </Key>
           <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="AspNetRoleInGroupUsers" Relationship="IEE_Model.FK_AspNetRoleInGroupUser_AspNetRoles" FromRole="AspNetRole" ToRole="AspNetRoleInGroupUser" />
           <NavigationProperty Name="SysRoleInFunctions" Relationship="IEE_Model.FK_SysRoleInFunction_AspNetRoles" FromRole="AspNetRole" ToRole="SysRoleInFunction" />
           <NavigationProperty Name="AspNetUsers" Relationship="IEE_Model.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+          <NavigationProperty Name="AspNetRoleInGroups" Relationship="IEE_Model.FK_AspNetRoleInGroup_AspNetRoles" FromRole="AspNetRole" ToRole="AspNetRoleInGroup" />
         </EntityType>
         <EntityType Name="AspNetUserClaim">
           <Key>
@@ -343,6 +386,7 @@
           <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AspNetUserLogins" Relationship="IEE_Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
           <NavigationProperty Name="AspNetRoles" Relationship="IEE_Model.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+          <Property Name="DoB" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="AspNetUserType">
           <Key>
@@ -393,21 +437,12 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
           <EntitySet Name="AspNetGroupUsers" EntityType="IEE_Model.AspNetGroupUser" />
-          <EntitySet Name="AspNetRoleInGroupUsers" EntityType="IEE_Model.AspNetRoleInGroupUser" />
           <EntitySet Name="AspNetUserInGroups" EntityType="IEE_Model.AspNetUserInGroup" />
           <EntitySet Name="SysFunctions" EntityType="IEE_Model.SysFunction" />
           <EntitySet Name="SysRoleInFunctions" EntityType="IEE_Model.SysRoleInFunction" />
-          <AssociationSet Name="FK_AspNetRoleInGroupUser_AspNetGroupUsers" Association="IEE_Model.FK_AspNetRoleInGroupUser_AspNetGroupUsers">
-            <End Role="AspNetGroupUser" EntitySet="AspNetGroupUsers" />
-            <End Role="AspNetRoleInGroupUser" EntitySet="AspNetRoleInGroupUsers" />
-          </AssociationSet>
           <AssociationSet Name="FK_AspNetUserInGroup_AspNetGroupUsers" Association="IEE_Model.FK_AspNetUserInGroup_AspNetGroupUsers">
             <End Role="AspNetGroupUser" EntitySet="AspNetGroupUsers" />
             <End Role="AspNetUserInGroup" EntitySet="AspNetUserInGroups" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AspNetRoleInGroupUser_AspNetRoles" Association="IEE_Model.FK_AspNetRoleInGroupUser_AspNetRoles">
-            <End Role="AspNetRole" EntitySet="AspNetRoles" />
-            <End Role="AspNetRoleInGroupUser" EntitySet="AspNetRoleInGroupUsers" />
           </AssociationSet>
           <AssociationSet Name="FK_SysRoleInFunction_AspNetRoles" Association="IEE_Model.FK_SysRoleInFunction_AspNetRoles">
             <End Role="AspNetRole" EntitySet="AspNetRoles" />
@@ -432,6 +467,15 @@
             <End Role="AspNetRole" EntitySet="AspNetRoles" />
             <End Role="AspNetUser" EntitySet="AspNetUsers" />
           </AssociationSet>
+          <EntitySet Name="AspNetRoleInGroups" EntityType="IEE_Model.AspNetRoleInGroup" />
+          <AssociationSet Name="FK_AspNetRoleInGroup_AspNetGroupUsers" Association="IEE_Model.FK_AspNetRoleInGroup_AspNetGroupUsers">
+            <End Role="AspNetGroupUser" EntitySet="AspNetGroupUsers" />
+            <End Role="AspNetRoleInGroup" EntitySet="AspNetRoleInGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetRoleInGroup_AspNetRoles" Association="IEE_Model.FK_AspNetRoleInGroup_AspNetRoles">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="AspNetRoleInGroup" EntitySet="AspNetRoleInGroups" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AspNetGroupUser">
           <Key>
@@ -442,19 +486,8 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Descriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" />
-          <NavigationProperty Name="AspNetRoleInGroupUsers" Relationship="IEE_Model.FK_AspNetRoleInGroupUser_AspNetGroupUsers" FromRole="AspNetGroupUser" ToRole="AspNetRoleInGroupUser" />
           <NavigationProperty Name="AspNetUserInGroups" Relationship="IEE_Model.FK_AspNetUserInGroup_AspNetGroupUsers" FromRole="AspNetGroupUser" ToRole="AspNetUserInGroup" />
-        </EntityType>
-        <EntityType Name="AspNetRoleInGroupUser">
-          <Key>
-            <PropertyRef Name="GroupId" />
-            <PropertyRef Name="RoleId" />
-          </Key>
-          <Property Name="GroupId" Type="Int32" Nullable="false" />
-          <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" />
-          <NavigationProperty Name="AspNetGroupUser" Relationship="IEE_Model.FK_AspNetRoleInGroupUser_AspNetGroupUsers" FromRole="AspNetRoleInGroupUser" ToRole="AspNetGroupUser" />
-          <NavigationProperty Name="AspNetRole" Relationship="IEE_Model.FK_AspNetRoleInGroupUser_AspNetRoles" FromRole="AspNetRoleInGroupUser" ToRole="AspNetRole" />
+          <NavigationProperty Name="AspNetRoleInGroups" Relationship="IEE_Model.FK_AspNetRoleInGroup_AspNetGroupUsers" FromRole="AspNetGroupUser" ToRole="AspNetRoleInGroup" />
         </EntityType>
         <EntityType Name="AspNetUserInGroup">
           <Key>
@@ -491,18 +524,6 @@
           <NavigationProperty Name="AspNetRole" Relationship="IEE_Model.FK_SysRoleInFunction_AspNetRoles" FromRole="SysRoleInFunction" ToRole="AspNetRole" />
           <NavigationProperty Name="SysFunction" Relationship="IEE_Model.FK_SysRoleInFunction_SysFunctions" FromRole="SysRoleInFunction" ToRole="SysFunction" />
         </EntityType>
-        <Association Name="FK_AspNetRoleInGroupUser_AspNetGroupUsers">
-          <End Type="IEE_Model.AspNetGroupUser" Role="AspNetGroupUser" Multiplicity="1" />
-          <End Type="IEE_Model.AspNetRoleInGroupUser" Role="AspNetRoleInGroupUser" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetGroupUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetRoleInGroupUser">
-              <PropertyRef Name="GroupId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_AspNetUserInGroup_AspNetGroupUsers">
           <End Type="IEE_Model.AspNetGroupUser" Role="AspNetGroupUser" Multiplicity="1" />
           <End Type="IEE_Model.AspNetUserInGroup" Role="AspNetUserInGroup" Multiplicity="*" />
@@ -512,18 +533,6 @@
             </Principal>
             <Dependent Role="AspNetUserInGroup">
               <PropertyRef Name="GroupId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AspNetRoleInGroupUser_AspNetRoles">
-          <End Type="IEE_Model.AspNetRole" Role="AspNetRole" Multiplicity="1" />
-          <End Type="IEE_Model.AspNetRoleInGroupUser" Role="AspNetRoleInGroupUser" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetRoleInGroupUser">
-              <PropertyRef Name="RoleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -612,6 +621,41 @@
           <End Type="IEE_Model.AspNetRole" Role="AspNetRole" Multiplicity="*" />
           <End Type="IEE_Model.AspNetUser" Role="AspNetUser" Multiplicity="*" />
         </Association>
+        <EntityType Name="AspNetRoleInGroup">
+          <Key>
+            <PropertyRef Name="GroupId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="AspNetGroupUser" Relationship="IEE_Model.FK_AspNetRoleInGroup_AspNetGroupUsers" FromRole="AspNetRoleInGroup" ToRole="AspNetGroupUser" />
+          <NavigationProperty Name="AspNetRole" Relationship="IEE_Model.FK_AspNetRoleInGroup_AspNetRoles" FromRole="AspNetRoleInGroup" ToRole="AspNetRole" />
+        </EntityType>
+        <Association Name="FK_AspNetRoleInGroup_AspNetGroupUsers">
+          <End Type="IEE_Model.AspNetGroupUser" Role="AspNetGroupUser" Multiplicity="1" />
+          <End Type="IEE_Model.AspNetRoleInGroup" Role="AspNetRoleInGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetGroupUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRoleInGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetRoleInGroup_AspNetRoles">
+          <End Type="IEE_Model.AspNetRole" Role="AspNetRole" Multiplicity="1" />
+          <End Type="IEE_Model.AspNetRoleInGroup" Role="AspNetRoleInGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRoleInGroup">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -639,6 +683,7 @@
           <EntitySetMapping Name="AspNetUsers">
             <EntityTypeMapping TypeName="IEE_Model.AspNetUser">
               <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="DoB" ColumnName="DoB" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -756,6 +801,15 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="AspNetRoleInGroups">
+            <EntityTypeMapping TypeName="IEE_Model.AspNetRoleInGroup">
+              <MappingFragment StoreEntitySet="AspNetRoleInGroup">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

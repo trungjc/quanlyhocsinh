@@ -17,8 +17,8 @@ namespace IEE.Lib.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AspNetGroupUser()
         {
-            this.AspNetRoleInGroupUsers = new HashSet<AspNetRoleInGroupUser>();
             this.AspNetUserInGroups = new HashSet<AspNetUserInGroup>();
+            this.AspNetRoleInGroups = new HashSet<AspNetRoleInGroup>();
         }
     
         public int Id { get; set; }
@@ -28,8 +28,8 @@ namespace IEE.Lib.Models
         public Nullable<bool> IsActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetRoleInGroupUser> AspNetRoleInGroupUsers { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserInGroup> AspNetUserInGroups { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetRoleInGroup> AspNetRoleInGroups { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace IEE.Lib.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class AspNetRoleInGroupUser
+    public partial class AspNetRoleInGroup
     {
         public int GroupId { get; set; }
         public string RoleId { get; set; }

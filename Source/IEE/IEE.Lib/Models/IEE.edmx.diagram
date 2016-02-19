@@ -4,30 +4,29 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6a629f6248a744c2b17f361747132479" Name="Diagram1" ZoomLevel="72">
+      <Diagram DiagramId="6a629f6248a744c2b17f361747132479" Name="Diagram1" ZoomLevel="93">
         <EntityTypeShape EntityType="IEE_Model.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="IEE_Model.AspNetUser" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="IEE_Model.AspNetUserType" Width="1.875" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="IEE_Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="IEE_Model.FK_AspNetUsers_AspNetUserType" ManuallyRouted="false" />
         <EntityTypeShape EntityType="IEE_Model.AspNetGroupUser" Width="4.125" PointX="10" PointY="4.5" />
         <EntityTypeShape EntityType="IEE_Model.AspNetUserInGroup" Width="1.5" PointX="6.125" PointY="3.625" />
         <EntityTypeShape EntityType="IEE_Model.SysRoleInFunction" Width="1.5" PointX="9.125" PointY="8.625" />
         <AssociationConnector Association="IEE_Model.FK_AspNetUserInGroup_AspNetGroupUsers" />
-        <AssociationConnector Association="IEE_Model.FK_AspNetUserInGroup_AspNetUsers" />
         <EntityTypeShape EntityType="IEE_Model.C__MigrationHistory" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="IEE_Model.AspNetUserLogin" Width="3.875" PointX="8.25" PointY="11.125" />
         <EntityTypeShape EntityType="IEE_Model.sysdiagram" Width="1.5" PointX="9.375" PointY="0.75" />
-        <AssociationConnector Association="IEE_Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <EntityTypeShape EntityType="IEE_Model.AspNetRoleInGroup" Width="1.5" PointX="7.875" PointY="6.5" />
         <AssociationConnector Association="IEE_Model.FK_AspNetRoleInGroup_AspNetGroupUsers" />
         <EntityTypeShape EntityType="IEE_Model.AspNetRole" Width="1.5" PointX="0.75" PointY="5.5" />
         <AssociationConnector Association="IEE_Model.FK_AspNetRoleInGroup_AspNetRoles" />
         <AssociationConnector Association="IEE_Model.FK_SysRoleInFunction_AspNetRoles" />
-        <AssociationConnector Association="IEE_Model.AspNetUserRoles" />
         <EntityTypeShape EntityType="IEE_Model.SysFunction" Width="1.5" PointX="0.75" PointY="11" />
         <AssociationConnector Association="IEE_Model.FK_SysFunctions_SysFunctions" />
         <AssociationConnector Association="IEE_Model.FK_SysRoleInFunction_SysFunctions" />
+        <EntityTypeShape EntityType="IEE_Model.AspNetUser" Width="1.5" PointX="3" PointY="3.375" />
+        <AssociationConnector Association="IEE_Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="IEE_Model.FK_AspNetUserInGroup_AspNetUsers" />
+        <AssociationConnector Association="IEE_Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="IEE_Model.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

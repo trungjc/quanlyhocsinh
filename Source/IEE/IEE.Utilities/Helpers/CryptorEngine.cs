@@ -15,8 +15,7 @@ namespace IEE.Utilities.Helpers
             byte[] keyArray;
             byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
 
-            System.Configuration.AppSettingsReader settingsReader =
-                                                new AppSettingsReader();
+            System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
             // Get the key from config file
 
             string key = (string)settingsReader.GetValue("SecurityKey",

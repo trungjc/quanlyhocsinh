@@ -47,11 +47,10 @@ namespace IEE.Lib.Models
         public string CompanyName { get; set; }
         public Nullable<int> DepartmentID { get; set; }
         public string LastName { get; set; }
-        public Nullable<System.DateTime> DoB { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
-        public virtual AspNetUserType AspNetUserType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserInGroup> AspNetUserInGroups { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

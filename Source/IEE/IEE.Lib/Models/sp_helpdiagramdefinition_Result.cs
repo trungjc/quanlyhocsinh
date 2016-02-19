@@ -10,12 +10,10 @@
 namespace IEE.Lib.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class AspNetUserType
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int Id { get; set; }
-        public string Code { get; set; }
-        public string Name { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

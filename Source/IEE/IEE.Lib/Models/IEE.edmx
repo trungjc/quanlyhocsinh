@@ -40,6 +40,8 @@
           </Key>
           <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsActive" Type="bit" />
         </EntityType>
         <EntityType Name="AspNetUserClaims">
           <Key>
@@ -136,6 +138,7 @@
           <Property Name="Actions" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="IsActive" Type="bit" />
+          <Property Name="ParentId" Type="int" />
         </EntityType>
         <EntityType Name="SysRoleInFunction">
           <Key>
@@ -250,6 +253,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SysFunctions_SysFunctions">
+          <End Role="SysFunctions" Type="Self.SysFunctions" Multiplicity="0..1" />
+          <End Role="SysFunctions1" Type="Self.SysFunctions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysFunctions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysFunctions1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_SysRoleInFunction_AspNetRoles">
           <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="0..1" />
           <End Role="SysRoleInFunction" Type="Self.SysRoleInFunction" Multiplicity="*" />
@@ -320,6 +335,10 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
           </AssociationSet>
+          <AssociationSet Name="FK_SysFunctions_SysFunctions" Association="Self.FK_SysFunctions_SysFunctions">
+            <End Role="SysFunctions" EntitySet="SysFunctions" />
+            <End Role="SysFunctions1" EntitySet="SysFunctions" />
+          </AssociationSet>
           <AssociationSet Name="FK_SysRoleInFunction_AspNetRoles" Association="Self.FK_SysRoleInFunction_AspNetRoles">
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="SysRoleInFunction" EntitySet="SysRoleInFunction" />
@@ -333,16 +352,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="IEE_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="AspNetRole">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="SysRoleInFunctions" Relationship="IEE_Model.FK_SysRoleInFunction_AspNetRoles" FromRole="AspNetRole" ToRole="SysRoleInFunction" />
-          <NavigationProperty Name="AspNetUsers" Relationship="IEE_Model.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
-          <NavigationProperty Name="AspNetRoleInGroups" Relationship="IEE_Model.FK_AspNetRoleInGroup_AspNetRoles" FromRole="AspNetRole" ToRole="AspNetRoleInGroup" />
-        </EntityType>
         <EntityType Name="AspNetUserClaim">
           <Key>
             <PropertyRef Name="Id" />
@@ -385,8 +394,8 @@
           <Property Name="DepartmentID" Type="Int32" />
           <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AspNetUserLogins" Relationship="IEE_Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
-          <NavigationProperty Name="AspNetRoles" Relationship="IEE_Model.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
           <Property Name="DoB" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="AspNetRoles" Relationship="IEE_Model.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
         </EntityType>
         <EntityType Name="AspNetUserType">
           <Key>
@@ -424,7 +433,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="IEE_Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
           <EntitySet Name="AspNetUserTypes" EntityType="Self.AspNetUserType" />
@@ -438,23 +446,14 @@
           </AssociationSet>
           <EntitySet Name="AspNetGroupUsers" EntityType="IEE_Model.AspNetGroupUser" />
           <EntitySet Name="AspNetUserInGroups" EntityType="IEE_Model.AspNetUserInGroup" />
-          <EntitySet Name="SysFunctions" EntityType="IEE_Model.SysFunction" />
           <EntitySet Name="SysRoleInFunctions" EntityType="IEE_Model.SysRoleInFunction" />
           <AssociationSet Name="FK_AspNetUserInGroup_AspNetGroupUsers" Association="IEE_Model.FK_AspNetUserInGroup_AspNetGroupUsers">
             <End Role="AspNetGroupUser" EntitySet="AspNetGroupUsers" />
             <End Role="AspNetUserInGroup" EntitySet="AspNetUserInGroups" />
           </AssociationSet>
-          <AssociationSet Name="FK_SysRoleInFunction_AspNetRoles" Association="IEE_Model.FK_SysRoleInFunction_AspNetRoles">
-            <End Role="AspNetRole" EntitySet="AspNetRoles" />
-            <End Role="SysRoleInFunction" EntitySet="SysRoleInFunctions" />
-          </AssociationSet>
           <AssociationSet Name="FK_AspNetUserInGroup_AspNetUsers" Association="IEE_Model.FK_AspNetUserInGroup_AspNetUsers">
             <End Role="AspNetUser" EntitySet="AspNetUsers" />
             <End Role="AspNetUserInGroup" EntitySet="AspNetUserInGroups" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SysRoleInFunction_SysFunctions" Association="IEE_Model.FK_SysRoleInFunction_SysFunctions">
-            <End Role="SysFunction" EntitySet="SysFunctions" />
-            <End Role="SysRoleInFunction" EntitySet="SysRoleInFunctions" />
           </AssociationSet>
           <EntitySet Name="C__MigrationHistory" EntityType="IEE_Model.C__MigrationHistory" />
           <EntitySet Name="AspNetUserLogins" EntityType="IEE_Model.AspNetUserLogin" />
@@ -463,18 +462,32 @@
             <End Role="AspNetUser" EntitySet="AspNetUsers" />
             <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
           </AssociationSet>
-          <AssociationSet Name="AspNetUserRoles" Association="IEE_Model.AspNetUserRoles">
-            <End Role="AspNetRole" EntitySet="AspNetRoles" />
-            <End Role="AspNetUser" EntitySet="AspNetUsers" />
-          </AssociationSet>
           <EntitySet Name="AspNetRoleInGroups" EntityType="IEE_Model.AspNetRoleInGroup" />
           <AssociationSet Name="FK_AspNetRoleInGroup_AspNetGroupUsers" Association="IEE_Model.FK_AspNetRoleInGroup_AspNetGroupUsers">
             <End Role="AspNetGroupUser" EntitySet="AspNetGroupUsers" />
             <End Role="AspNetRoleInGroup" EntitySet="AspNetRoleInGroups" />
           </AssociationSet>
+          <EntitySet Name="AspNetRoles" EntityType="IEE_Model.AspNetRole" />
           <AssociationSet Name="FK_AspNetRoleInGroup_AspNetRoles" Association="IEE_Model.FK_AspNetRoleInGroup_AspNetRoles">
             <End Role="AspNetRole" EntitySet="AspNetRoles" />
             <End Role="AspNetRoleInGroup" EntitySet="AspNetRoleInGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysRoleInFunction_AspNetRoles" Association="IEE_Model.FK_SysRoleInFunction_AspNetRoles">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="SysRoleInFunction" EntitySet="SysRoleInFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="IEE_Model.AspNetUserRoles">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <EntitySet Name="SysFunctions" EntityType="IEE_Model.SysFunction" />
+          <AssociationSet Name="FK_SysFunctions_SysFunctions" Association="IEE_Model.FK_SysFunctions_SysFunctions">
+            <End Role="SysFunction" EntitySet="SysFunctions" />
+            <End Role="SysFunction1" EntitySet="SysFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysRoleInFunction_SysFunctions" Association="IEE_Model.FK_SysRoleInFunction_SysFunctions">
+            <End Role="SysFunction" EntitySet="SysFunctions" />
+            <End Role="SysRoleInFunction" EntitySet="SysRoleInFunctions" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="AspNetGroupUser">
@@ -500,19 +513,6 @@
           <NavigationProperty Name="AspNetGroupUser" Relationship="IEE_Model.FK_AspNetUserInGroup_AspNetGroupUsers" FromRole="AspNetUserInGroup" ToRole="AspNetGroupUser" />
           <NavigationProperty Name="AspNetUser" Relationship="IEE_Model.FK_AspNetUserInGroup_AspNetUsers" FromRole="AspNetUserInGroup" ToRole="AspNetUser" />
         </EntityType>
-        <EntityType Name="SysFunction">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Controllers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Actions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" />
-          <NavigationProperty Name="SysRoleInFunctions" Relationship="IEE_Model.FK_SysRoleInFunction_SysFunctions" FromRole="SysFunction" ToRole="SysRoleInFunction" />
-        </EntityType>
         <EntityType Name="SysRoleInFunction">
           <Key>
             <PropertyRef Name="Id" />
@@ -536,18 +536,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SysRoleInFunction_AspNetRoles">
-          <End Type="IEE_Model.AspNetRole" Role="AspNetRole" Multiplicity="0..1" />
-          <End Type="IEE_Model.SysRoleInFunction" Role="SysRoleInFunction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="SysRoleInFunction">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_AspNetUserInGroup_AspNetUsers">
           <End Type="IEE_Model.AspNetUser" Role="AspNetUser" Multiplicity="1" />
           <End Type="IEE_Model.AspNetUserInGroup" Role="AspNetUserInGroup" Multiplicity="*" />
@@ -557,18 +545,6 @@
             </Principal>
             <Dependent Role="AspNetUserInGroup">
               <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SysRoleInFunction_SysFunctions">
-          <End Type="IEE_Model.SysFunction" Role="SysFunction" Multiplicity="0..1" />
-          <End Type="IEE_Model.SysRoleInFunction" Role="SysRoleInFunction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SysFunction">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="SysRoleInFunction">
-              <PropertyRef Name="FunctionId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -617,10 +593,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="AspNetUserRoles">
-          <End Type="IEE_Model.AspNetRole" Role="AspNetRole" Multiplicity="*" />
-          <End Type="IEE_Model.AspNetUser" Role="AspNetUser" Multiplicity="*" />
-        </Association>
         <EntityType Name="AspNetRoleInGroup">
           <Key>
             <PropertyRef Name="GroupId" />
@@ -644,6 +616,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="AspNetRoleInGroups" Relationship="IEE_Model.FK_AspNetRoleInGroup_AspNetRoles" FromRole="AspNetRole" ToRole="AspNetRoleInGroup" />
+          <NavigationProperty Name="SysRoleInFunctions" Relationship="IEE_Model.FK_SysRoleInFunction_AspNetRoles" FromRole="AspNetRole" ToRole="SysRoleInFunction" />
+          <NavigationProperty Name="AspNetUsers" Relationship="IEE_Model.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+        </EntityType>
         <Association Name="FK_AspNetRoleInGroup_AspNetRoles">
           <End Type="IEE_Model.AspNetRole" Role="AspNetRole" Multiplicity="1" />
           <End Type="IEE_Model.AspNetRoleInGroup" Role="AspNetRoleInGroup" Multiplicity="*" />
@@ -656,20 +640,68 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SysRoleInFunction_AspNetRoles">
+          <End Type="IEE_Model.AspNetRole" Role="AspNetRole" Multiplicity="0..1" />
+          <End Type="IEE_Model.SysRoleInFunction" Role="SysRoleInFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysRoleInFunction">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="IEE_Model.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+          <End Type="IEE_Model.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityType Name="SysFunction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Controllers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Actions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ParentId" Type="Int32" />
+          <NavigationProperty Name="SysFunctions1" Relationship="IEE_Model.FK_SysFunctions_SysFunctions" FromRole="SysFunction" ToRole="SysFunction1" />
+          <NavigationProperty Name="SysFunction1" Relationship="IEE_Model.FK_SysFunctions_SysFunctions" FromRole="SysFunction1" ToRole="SysFunction" />
+          <NavigationProperty Name="SysRoleInFunctions" Relationship="IEE_Model.FK_SysRoleInFunction_SysFunctions" FromRole="SysFunction" ToRole="SysRoleInFunction" />
+        </EntityType>
+        <Association Name="FK_SysFunctions_SysFunctions">
+          <End Type="IEE_Model.SysFunction" Role="SysFunction" Multiplicity="0..1" />
+          <End Type="IEE_Model.SysFunction" Role="SysFunction1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysFunction">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysFunction1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysRoleInFunction_SysFunctions">
+          <End Type="IEE_Model.SysFunction" Role="SysFunction" Multiplicity="0..1" />
+          <End Type="IEE_Model.SysRoleInFunction" Role="SysRoleInFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysFunction">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysRoleInFunction">
+              <PropertyRef Name="FunctionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="IEE_ModelStoreContainer" CdmEntityContainer="IEE_Entities">
-          <EntitySetMapping Name="AspNetRoles">
-            <EntityTypeMapping TypeName="IEE_Model.AspNetRole">
-              <MappingFragment StoreEntitySet="AspNetRoles">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserClaims">
             <EntityTypeMapping TypeName="IEE_Model.AspNetUserClaim">
               <MappingFragment StoreEntitySet="AspNetUserClaims">
@@ -740,19 +772,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SysFunctions">
-            <EntityTypeMapping TypeName="IEE_Model.SysFunction">
-              <MappingFragment StoreEntitySet="SysFunctions">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Actions" ColumnName="Actions" />
-                <ScalarProperty Name="Controllers" ColumnName="Controllers" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SysRoleInFunctions">
             <EntityTypeMapping TypeName="IEE_Model.SysRoleInFunction">
               <MappingFragment StoreEntitySet="SysRoleInFunction">
@@ -793,6 +812,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoleInGroups">
+            <EntityTypeMapping TypeName="IEE_Model.AspNetRoleInGroup">
+              <MappingFragment StoreEntitySet="AspNetRoleInGroup">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="IEE_Model.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <AssociationSetMapping Name="AspNetUserRoles" TypeName="IEE_Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
             <EndProperty Name="AspNetUser">
               <ScalarProperty Name="Id" ColumnName="UserId" />
@@ -801,12 +839,17 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="AspNetRoleInGroups">
-            <EntityTypeMapping TypeName="IEE_Model.AspNetRoleInGroup">
-              <MappingFragment StoreEntitySet="AspNetRoleInGroup">
+          <EntitySetMapping Name="SysFunctions">
+            <EntityTypeMapping TypeName="IEE_Model.SysFunction">
+              <MappingFragment StoreEntitySet="SysFunctions">
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Actions" ColumnName="Actions" />
+                <ScalarProperty Name="Controllers" ColumnName="Controllers" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

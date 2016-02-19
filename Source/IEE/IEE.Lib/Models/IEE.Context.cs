@@ -25,17 +25,17 @@ namespace IEE.Lib.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<AspNetUserType> AspNetUserTypes { get; set; }
         public virtual DbSet<AspNetGroupUser> AspNetGroupUsers { get; set; }
         public virtual DbSet<AspNetUserInGroup> AspNetUserInGroups { get; set; }
-        public virtual DbSet<SysFunction> SysFunctions { get; set; }
         public virtual DbSet<SysRoleInFunction> SysRoleInFunctions { get; set; }
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<AspNetRoleInGroup> AspNetRoleInGroups { get; set; }
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<SysFunction> SysFunctions { get; set; }
     }
 }

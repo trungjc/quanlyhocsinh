@@ -17,19 +17,21 @@ namespace IEE.Lib.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AspNetRole()
         {
+            this.AspNetRoleInGroups = new HashSet<AspNetRoleInGroup>();
             this.SysRoleInFunctions = new HashSet<SysRoleInFunction>();
             this.AspNetUsers = new HashSet<AspNetUser>();
-            this.AspNetRoleInGroups = new HashSet<AspNetRoleInGroup>();
         }
     
         public string Id { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetRoleInGroup> AspNetRoleInGroups { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SysRoleInFunction> SysRoleInFunctions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetRoleInGroup> AspNetRoleInGroups { get; set; }
     }
 }

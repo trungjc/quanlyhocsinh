@@ -17,6 +17,7 @@ namespace IEE.Lib.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SysFunction()
         {
+            this.SysFunctions1 = new HashSet<SysFunction>();
             this.SysRoleInFunctions = new HashSet<SysRoleInFunction>();
         }
     
@@ -27,7 +28,11 @@ namespace IEE.Lib.Models
         public string Actions { get; set; }
         public string Description { get; set; }
         public Nullable<bool> IsActive { get; set; }
+        public Nullable<int> ParentId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SysFunction> SysFunctions1 { get; set; }
+        public virtual SysFunction SysFunction1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SysRoleInFunction> SysRoleInFunctions { get; set; }
     }

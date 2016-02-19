@@ -155,17 +155,21 @@ namespace IEE.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = model.UserName };
-                user.Email = model.Email;
-                user.EmailConfirmed = false;
-                user.FirstName = model.FirstName;
-                user.LastName = model.LastName;
-                user.FullName = string.Format("{0} {1}", model.FirstName, model.LastName);
-                user.SkypeID = model.SkypeID;
-                user.Gender = model.Gender;
-                user.CompanyName = model.CompanyName;
-                user.Address = model.Address;
-                user.IsLocked = false;
+                var user = new ApplicationUser()
+                {
+                    UserName = model.UserName,
+                    Email = model.Email,
+                    EmailConfirmed = false,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    FullName = string.Format("{0} {1}", model.FirstName, model.LastName),
+                    SkypeID = model.SkypeID,
+                    Gender = model.Gender,
+                    CompanyName = model.CompanyName,
+                    Address = model.Address,
+                    IsLocked = false,
+                    DateOfBirth = model.DateOfBirth
+                };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -173,7 +177,9 @@ namespace IEE.Web.Controllers
                     var m = new MailMessage();
                     m.To.Add(model.Email);
                     m.Subject = "Email confirmation";
-                    m.Body = string.Format("Dear {0}<BR/>Thank you for your registration, please click on the below link to comlete your registration: <a href=\"{1}\" title=\"User Email Confirm\">{1}</a>", user.UserName, Url.Action("ConfirmEmail", "Account", new { Token = user.Id, Email = user.Email }, Request.Url.Scheme));
+                    m.Body = string.Format("Dear {0}<BR/>Thank you for your registration, please click on the below link to comlete your registration: <a href=\"{1}\" title=\"User Email Confirm\">{1}</a>",
+                                            user.UserName,
+                                            Url.Action("ConfirmEmail", "Account", new { Token = user.Id, Email = user.Email }, Request.Url.Scheme));
                     m.IsBodyHtml = true;
                     Mail.SendMail(m);
                     return RedirectToAction("Confirm", "Account", new { Email = user.Email });

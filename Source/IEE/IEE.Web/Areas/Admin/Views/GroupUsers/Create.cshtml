@@ -1,35 +1,45 @@
 ﻿@model IEE.Lib.Models.AspNetGroupUser
-
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Thêm mới nhóm người dùng";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<div class="box">
+    <div class="box-header row">
 
+        <h3 class="box-title col-md-7">@ViewBag.Title</h3>
+        <div>
+            <!-- Date and time range -->
+            <div class="col-md-5">
+                <div class="form-group">
+                    @*<button class="btn btn-primary pull-right "><i class="fa fa-plus"></i> Thêm mới</button>*@
+                    @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-primary pull-right " })
+                </div>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>AspNetGroupUser</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-        @Html.Partial("_GroupUsersInfo", Model)
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+            </div><!-- /.form group -->
         </div>
-    </div>
-}
+    </div><!-- /.box-header -->
+    <div class="box-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                @Html.Partial("_GroupUsersInfo", Model)
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace IEE.Web.Models
@@ -83,6 +84,11 @@ namespace IEE.Web.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+        [Display(Name = "Birth day")]
+        [DataType(DataType.Date)]
+        public DateTime DateOfBirth { get; set; }
+
+
         [Required]
         [EmailAddress]
         [Display(Name = "E-mail")]
@@ -107,7 +113,7 @@ namespace IEE.Web.Models
 
         [Display(Name = "Address")]
         public string Address { get; set; }
-        
+
     }
 
     public class ResetPasswordViewModel

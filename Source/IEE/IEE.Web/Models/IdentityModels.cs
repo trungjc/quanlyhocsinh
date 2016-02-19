@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 
 namespace IEE.Web.Models
 {
@@ -20,6 +21,7 @@ namespace IEE.Web.Models
         public string ResponsibilityID { get; set; }
         public bool IsLocked { get; set; }
         public int DepartmentID { get; set; }
+        public DateTime? DateOfBirth { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

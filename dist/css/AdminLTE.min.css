@@ -4743,11 +4743,29 @@ table.text-center th {
   background: white;
   border-radius: 5px;
 }
+.notification-heading .close {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  opacity: 1;
+  color: white;
+}
+
+.notification-heading .badge {
+  background: white;
+  color: #333;
+}
+
+.active.notification-box .notification-heading .close {
+  display: block;
+}
 
 .notification-heading {
   background: #ff6201;
   border-radius: 5px 5px 0 0;
   padding: 6px 20px;
+  position: relative;
 }
 .notification-heading h4 {
   margin: 0;
@@ -4758,6 +4776,8 @@ table.text-center th {
 .notification-body {
   display: none;
   padding: 20px;
+  border: 1px solid #ddd;
+  border-top: 0;
 }
 
 .active.notification-box .notification-body {

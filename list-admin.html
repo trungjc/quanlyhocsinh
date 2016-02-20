@@ -408,7 +408,7 @@
                         <td class="action center">
                           <a href="phanquyen.html" title="them nhom quyen"><i class="fa fa-user-plus"></i></a>
                           <a href="create-new-admin.html" title="sua"><i class="fa fa-edit"></i></a>
-                          <a href="" title="xoa"><i class="fa fa-trash"></i></a>
+                          <a href="" title="xoa" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-trash"></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -421,7 +421,7 @@
                          <td class="action center">
                           <a href="phanquyen.html" title="them nhom quyen"><i class="fa fa-user-plus"></i></a>
                           <a href="create-new-admin.html" title="sua"><i class="fa fa-edit"></i></a>
-                          <a href="" title="xoa"><i class="fa fa-trash"></i></a>
+                          <a href="" title="xoa" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-trash"></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -434,7 +434,7 @@
                          <td class="action center">
                           <a href="phanquyen.html" title="them nhom quyen"><i class="fa fa-user-plus"></i></a>
                           <a href="create-new-admin.html" title="sua"><i class="fa fa-edit"></i></a>
-                          <a href="" title="xoa"><i class="fa fa-trash"></i></a>
+                          <a href="" title="xoa" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-trash"></i></a>
                         </td>
                       </tr>
                     </tbody>
@@ -495,6 +495,27 @@
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
+
+<!-- begin modal-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Delete user</h4>
+      </div>
+      <div class="modal-body">
+        <p>Do you want delete&hellip;</p>
+      </div> 
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary">Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
     <!-- jQuery 2.1.4 -->
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>

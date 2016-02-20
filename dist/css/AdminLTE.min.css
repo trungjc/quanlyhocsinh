@@ -4731,6 +4731,59 @@ table.text-center th {
 .center {
   text-align: center;
 }
+.modal-dialog.large-modal {
+  width: 80%;
+}
+.notification-box {
+  position: fixed;
+  bottom: 0;
+  width: 320px;
+  right: 20px;
+  z-index: 99;
+  background: white;
+  border-radius: 5px;
+}
+.notification-heading .close {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  opacity: 1;
+  color: white;
+}
+
+.notification-heading .badge {
+  background: #dd4b39 ;
+  color: #333;
+}
+
+.active.notification-box .notification-heading .close {
+  display: block;
+}
+
+.notification-heading {
+  background: #222d32;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 20px;
+  position: relative;
+  opacity: 0.9
+}
+.notification-heading h4 {
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.notification-body {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-top: 0;
+}
+
+.active.notification-box .notification-body {
+    display: block;
+}
 
 table .action {
   text-align: center;

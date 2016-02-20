@@ -42,6 +42,12 @@ $(function () {
   });
 
 
+    // notification box footer
+
+    $('.notification-heading').on('click',function() {
+        $(this).parent().toggleClass('active');
+    })
+
   /* The todo list plugin */
   $(".todo-list").todolist({
     onCheck: function (ele) {

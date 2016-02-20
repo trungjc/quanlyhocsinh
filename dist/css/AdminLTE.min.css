@@ -4734,6 +4734,36 @@ table.text-center th {
 .modal-dialog.large-modal {
   width: 80%;
 }
+.notification-box {
+  position: fixed;
+  bottom: 0;
+  width: 320px;
+  right: 20px;
+  z-index: 99;
+  background: white;
+  border-radius: 5px;
+}
+
+.notification-heading {
+  background: #ff6201;
+  border-radius: 5px 5px 0 0;
+  padding: 6px 20px;
+}
+.notification-heading h4 {
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.notification-body {
+  display: none;
+  padding: 20px;
+}
+
+.active.notification-box .notification-body {
+    display: block;
+}
+
 table .action {
   text-align: center;
 }

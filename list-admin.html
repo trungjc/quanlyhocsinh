@@ -410,7 +410,7 @@
                                             </td>
                                             <td class="action center">
                                                 <a href="phanquyen.html" title="them nhom quyen"><i class="fa fa-user-plus"></i></a>
-                                                <a data-toggle="modal" data-target="#editModal" title="sua"><i class="fa fa-edit"></i></a>
+                                                <a href="" data-toggle="modal" data-target="#editModal" title="sua"><i class="fa fa-edit"></i></a>
                                                 <a href="" title="xoa" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
@@ -440,7 +440,7 @@
                                             </td>
                                             <td class="action center">
                                                 <a href="phanquyen.html" title="them nhom quyen"><i class="fa fa-user-plus"></i></a>
-                                                <a data-toggle="modal" data-target="#editModal" title="sua"><i class="fa fa-edit"></i></a>
+                                                <a href="" data-toggle="modal" data-target="#editModal" title="sua"><i class="fa fa-edit"></i></a>
                                                 <a href="" title="xoa" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
@@ -564,7 +564,8 @@
                                             <label class="col-sm-2 control-label" for="inputEmail3">Ngày sinh </label>
                                             <div class="col-sm-10 ">
                                                 <div class=" input-group">
-                                                    <input type="text" placeholder="Ngày sinh" id="inputEmail3" class="daterange form-control">
+                                                    <input type="text" placeholder="Ngày sinh" id="inputEmail3" data-provide="datepicker" class=" form-control">
+
                                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                 </div>
                                             </div>
@@ -663,6 +664,8 @@
         </script>
         <!-- Bootstrap 3.3.5 -->
         <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
         <script src="dist/js/pages/dashboard.js"></script>
 </body>
 

@@ -4731,7 +4731,9 @@ table.text-center th {
 .center {
   text-align: center;
 }
-
+.modal-dialog.large-modal {
+  width: 80%;
+}
 table .action {
   text-align: center;
 }

@@ -1,43 +1,37 @@
 ﻿@model IEE.Lib.Models.AspNetRole
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Chi tiết quyền: " + Model.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="box">
+    <div class="box-header row">
+        <h3 class="box-title col-md-7">@ViewBag.Title</h3>
 
-<div>
-    <h4>AspNetRole</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+    </div><!-- /.box-header -->
+    <div class="box-body">
+        <dl class="dl-horizontal">
+            <dt>
+               <span>Mô tả</span>
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dt>
+                <span>Kích hoạt</span>
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+            <dd>
+                @Model.IsActive
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Model.IsActive
-        </dd>
-
-    </dl>
+        </dl>
+    </div>
+    <div class="box-footer">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

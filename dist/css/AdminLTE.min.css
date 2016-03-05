@@ -4792,3 +4792,18 @@ table .action {
 .action a {
 	margin: 0 5px;
 }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  padding: 0;
+  margin: -1px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: none;border: 1px solid transparent;
+}
+.modal-title {
+  font-weight: bold;
+}
+
+.medium-modal {
+  width: 60%;
+}

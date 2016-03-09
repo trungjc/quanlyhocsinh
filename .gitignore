@@ -9,5 +9,4 @@ test.html
 *.log
 test.html
 *.dll
-/Source/IEE/IEE.Lib/bin/Debug
 /Source/IEE/IEE.Lib/bin/Debug/*
